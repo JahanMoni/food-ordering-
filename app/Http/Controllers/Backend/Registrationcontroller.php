@@ -11,4 +11,18 @@ class Registrationcontroller extends Controller
     {
         return view('backend.layouts.registrations.registration');
     }
+    public function store(Request $request)
+    {
+        // dd($request->all());
+        Registresion::create([
+           
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'address'=>$request->address,
+            'phone'=>$request->phone,
+            
+           
+        ]);
+        return redirect()->back();
+    }
 }

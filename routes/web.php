@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Frontend\HomeController as FrontendHome;
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -21,14 +22,25 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',[FrontendHome::class,'home'])->name(name:'home');
 
 
+
+Route::group(['prefix'=>'admin'],function () {
 Route::get('/',[HomeController::class,'home'])->name('homes.home');
+
+
 Route::get('/dashboard',[DashboardController::class,'dash'])->name('dashboard.dash');
+
 Route::get('/category',[CategoryController::class,'category'])->name('categories.category');
+Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
+
 Route::get('/item',[ItemController::class,'item'])->name('items.item');
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
 Route::get('/customer',[CustomerController::class,'customer'])->name('customers.customer');
+
 Route::get('/registration',[Registrationcontroller::class,'registration'])->name('registrations.registration');
+Route::post('/registration/store',[Registrationcontroller::class,'store'])->name('registrations.store');
 Route::get('/employee',[Employeecontroller::class,'employee'])->name('employees.employee');
+});
