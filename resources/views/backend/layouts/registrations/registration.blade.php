@@ -1,51 +1,15 @@
 @extends('backend.master')
            @section('content')
            <h1>Customer Record</h1>
-          
-           <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-    <i class="bi bi-alarm"></i>
-    Add New customer
-</button>
+      
+             <!-- modal   -->
 
 
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col"></th>
-        <th scope="col">Customer Record</th>
-        
-
-
-        </tr>
-    </thead>
-    <tbody>
-    {{--course--}}
-{{--@dd($courses)--}}
-@foreach($registrations as $registration)
-    <tr>
-        <th scope="row">{{$customer->id}}</th>
-        <td>{{$customer->name}}</td>
-        <td>{{$customer->address}}</td>
-        <td>{{$customer->phone}}</td>
-        
-
-    </tr>
-@endforeach
-    </tbody>
-   
-</table>
-          
-          
-       
-
-
-           
-           <!-- modal   -->
-
-
-        <from action ="{{route('registration.store')}}" method="post">
+             <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputName">Name</label>
+      <input type="name" class="form-control" id="inputName" placeholder="Name">
+    </div>  
         
   <div class="form-row">
     <div class="form-group col-md-6">
@@ -60,11 +24,7 @@
   <div class="form-group">
     <label for="inputAddress">Address</label>
     <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
+  
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">City</label>
