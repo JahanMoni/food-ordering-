@@ -8,7 +8,7 @@
 					<div class="overflow-hidden">
 						<h4>Phone</h4>
 						<p class="lead">
-							+01 123-456-4590
+							01972260772
 						</p>
 					</div>
 				</div>
@@ -17,7 +17,7 @@
 					<div class="overflow-hidden">
 						<h4>Email</h4>
 						<p class="lead">
-							yourmail@gmail.com
+							jahanmoni1711@gmail.com
 						</p>
 					</div>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="overflow-hidden">
 						<h4>Location</h4>
 						<p class="lead">
-							800, Lorem Street, US
+						uttara,Dhaka
 						</p>
 					</div>
 				</div>
@@ -52,7 +52,7 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h3>Contact information</h3>
-					<p class="lead">Ipsum Street, Lorem Tower, MO, Columbia, 508000</p>
+					<p class="lead">uttara,dhaka 508000</p>
 					<p class="lead"><a href="#">+01 2000 800 9999</a></p>
 					<p><a href="#"> info@admin.com</a></p>
 				</div>
@@ -80,7 +80,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<p class="company-name">All Rights Reserved. &copy; 2018 <a href="#">Yamifood Restaurant</a> Design By : 
+						<p class="company-name">All Rights Reserved. &copy; 2018 <a href="#">Nusrat Restaurant</a> Design By : 
 					<a href="https://html.design/">html design</a></p>
 					</div>
 				</div>

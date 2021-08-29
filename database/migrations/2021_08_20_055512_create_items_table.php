@@ -16,11 +16,11 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->string('categoryname',100);
+            $table->string('category_item',100);
             
             $table->double('price',10,2)->default(0.00);
             $table->integer('stock')->default(0);
-            $table->text('description')->nullable();
+            $table->text('details')->nullable();
             $table->string('image')->nullable();
             $table->string('status',10)->default('active');
             $table->timestamps();

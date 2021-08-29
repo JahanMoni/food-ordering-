@@ -36,6 +36,8 @@ Route::get('/category',[CategoryController::class,'category'])->name('categories
 Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
 
 Route::get('/item',[ItemController::class,'item'])->name('items.item');
+Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
+
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
 Route::get('/customer',[CustomerController::class,'customer'])->name('customers.customer');

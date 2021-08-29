@@ -1,6 +1,7 @@
 @extends('backend.master')
            @section('content')
            <h1>Customer List</h1>
+           
            <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
   Launch demo modal
@@ -26,4 +27,26 @@
     </div>
   </div>
 </div>
+
+<table class="table">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">id/th>
+      <th scope="col">category-name</th>
+      <th scope="col">status</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    
+    
+  </tbody>
+</table>
+
            @endsection
