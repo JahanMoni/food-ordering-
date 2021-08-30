@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\Registrationcontroller;
 use App\Http\Controllers\Backend\Employeecontroller;
+use App\Http\Controllers\Backend\Restaurantcontroller;
 
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,11 @@ Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
 Route::get('/customer',[CustomerController::class,'customer'])->name('customers.customer');
+
+Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');
+Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaurant.store');
+
+
 
 Route::get('/registration',[Registrationcontroller::class,'registration'])->name('registrations.registration');
 Route::post('/registration/store',[Registrationcontroller::class,'store'])->name('registrations.store');

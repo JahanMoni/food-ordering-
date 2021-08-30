@@ -6,7 +6,13 @@
                                 Dashboard
                             </a>
                             
-                            
+                             
+                            <a class="nav-link" href="{{route('Restaurant.info')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Restaurant Info
+                            </a> 
+
+
                             <a class="nav-link" href="{{route('categories.category')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Category
