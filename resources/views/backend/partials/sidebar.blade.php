@@ -12,6 +12,11 @@
                                 Restaurant Info
                             </a> 
 
+                            <a class="nav-link" href="{{route('user.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                User
+                            </a> 
+
 
                             <a class="nav-link" href="{{route('categories.category')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>

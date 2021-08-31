@@ -10,6 +10,8 @@ use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\Registrationcontroller;
 use App\Http\Controllers\Backend\Employeecontroller;
 use App\Http\Controllers\Backend\Restaurantcontroller;
+use App\Http\Controllers\Backend\UserController as BackendUser;
+use App\Http\Controllers\Frontend\UserController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -26,9 +28,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name(name:'home');
 
 
-
+Route::get('admin/login',[BackendUser::class,'login'])->name('admin/login');
 Route::group(['prefix'=>'admin'],function () {
 Route::get('/',[HomeController::class,'home'])->name('homes.home');
+
 
 
 Route::get('/dashboard',[DashboardController::class,'dash'])->name('dashboard.dash');
@@ -45,6 +48,17 @@ Route::get('/customer',[CustomerController::class,'customer'])->name('customers.
 
 Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');
 Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaurant.store');
+
+
+
+Route::get('/signup',[UserController::class,'signup'])->name('User.signup');
+Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
+
+Route::get('/customers',[BackendUser::class,'customerList'])->name('customer.list');
+Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
+
+
+
 
 
 

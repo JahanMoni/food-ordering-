@@ -13,6 +13,7 @@
 						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
 						<li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('User.signup')}}">sign up</a></li>
 						
 				
                      <li class="nav-item dropdown">
@@ -31,7 +32,7 @@
 						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
 										
 						<button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
-    sign up
+    log in
 
 </button>
 				</div>
