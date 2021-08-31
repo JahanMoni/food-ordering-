@@ -16,7 +16,7 @@ class Itemcontroller extends Controller
         public function store(Request $request)
         {
             Item::create([
-                'name' =>$request->item_name,
+                'name' =>$request->Item_name,
                 'category_item' =>$request->category_item,
                 'price' =>$request->price,
                 'details' =>$request->details
