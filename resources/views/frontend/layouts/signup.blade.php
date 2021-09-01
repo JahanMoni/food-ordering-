@@ -8,6 +8,31 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+
+
+<body>
+
+<style type="text/css">
+body {
+    
+
+  
+    background-image:url('https://images.unsplash.com/photo-1515669097368-22e68427d265?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjA5fHxmb29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+  background-position:center;
+  background-size:cover;
+
+  margin: 0;
+  padding: 0;
+  background-color: #17a2b8;
+  height: 100vh;
+}
+</style>
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+
 <form action="{{route('user.signup.store')}}" type="form" method="post">
 @csrf
 <div class="container">
@@ -79,6 +104,7 @@
 </div>
 
 </div>
+</body>
 
 @endsection
 

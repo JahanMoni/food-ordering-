@@ -28,9 +28,14 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name(name:'home');
 
 
-Route::get('admin/login',[BackendUser::class,'login'])->name('admin/login');
-Route::group(['prefix'=>'admin'],function () {
-Route::get('/',[HomeController::class,'home'])->name('homes.home');
+Route::get('admin/login',[BackendUser::class,'login'])->name('admin.login');
+Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.login.post');
+ Route::group(['prefix'=>'admin','middleware'=>'auth'],function()
+ {
+
+
+Route::get('/',[HomeController::class,'home'])->name('dashboard');
+Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
 
 
 

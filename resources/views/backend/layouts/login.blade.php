@@ -7,7 +7,7 @@
 
 body {
 
-    background-image:url('https://images.unsplash.com/photo-1615719413546-198b25453f85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=376&q=80');
+    background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80');
   background-position:center;
   background-size:cover;
 
@@ -33,27 +33,37 @@ body {
 
 <body>
     <div id="login">
-        <h3 class="text-center text-white pt-5">Login form</h3>
+       
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="" method="post">
+                    @if(session()->has('message'))
+                            <span class="alert alert-danger">{{session()->get('message')}}</span>
+                    @endif
+            <div class="card-body">
+
+                <form action="{{route('admin.login.post')}}" method="post">
+                    @csrf
+                        
                             <h3 class="text-center text-info">Login</h3>
                             <div class="form-group">
-                                <label for="username" class="text-info">Username:</label><br>
-                                <input type="text" name="username" id="username" class="form-control">
-                            </div>
+                                <label for="username" class="text-info">email:</label><br>
+                                <input type="email" name="email" id="email" class="form-control">
+                                 </div>
+        
+
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" name="password" id="password" class="form-control">
+                                <input type="password" name="password" id="password" class="form-control">
                             </div>
                             <div class="form-group">
                                 <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                               
                             </div>
-                            <div id="register-link" class="text-right">
-                                <a href="#" class="text-info">Register here</a>
+                            
+                               
+                                <button type="submit" class="btn btn-success btn-lg btn-block login-button" href=" " >Submit</button>
                             </div>
                         </form>
                     </div>
