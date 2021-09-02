@@ -18,6 +18,7 @@
                         <th scope="col">id</th>
                         <th scope="col"> name</th>
                         <th scope="col"> category_item</th>
+                        <th scope="col">Category ID</th>
                         <th scope="col"> price</th>
                         <th scope="col"> details</th>
                         
@@ -32,6 +33,7 @@
 <th scope="row">{{$item->id}}</th>>
     <td>{{$item->name}}</td>
     <td>{{$item->category_item}}</td>
+    <td>{{$item->category->name}}</td>
     <td>{{$item->price}}</td>
     <td>{{$item->details}}</td>
 
@@ -40,6 +42,9 @@
         @endforeach
   </tbody>
 </table>
+
+{{$items->links('pagination::bootstrap-4')}}
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
@@ -48,11 +53,23 @@
 
             <form action="{{route('items.store')}}" method="POST">
                 @csrf
+                
 
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Item List</h5>
                 </div>
+
                 <div class="modal-body">
+
+
+                <div class="form-group">
+                            <label for="item_name">Select Category</label>
+                            <select class="form-control" name="category_id" id="">
+                                @foreach($categories as $cat)
+                                <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                @endforeach
+                            </select>
+                            </div>
                     <div class="form-group">
                         <label for="description">Item Name</label>
                         <input type="text" class="form-control" name="Item_name" placeholder="Enter Item name"
