@@ -19,6 +19,7 @@ class CreateItemsTable extends Migration
             $table->string('category_item',100);
             $table->integer('category_id');
             
+            
             $table->double('price',10,2)->default(0.00);
             $table->integer('stock')->default(0);
             $table->text('details')->nullable();

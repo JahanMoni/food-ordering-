@@ -11,7 +11,7 @@ class Itemcontroller extends Controller
 {
     public function Item()
     {
-        $items=Item::with('category')->paginate(10);
+        $items=Item::with('category')->paginate(3);
         //        dd($products);
               
 
@@ -20,10 +20,23 @@ class Itemcontroller extends Controller
     }
         public function store(Request $request)
         {
+            $fileName='';
+        if($request->hasFile('image'))
+        {
+           $file=$request->file('image');
+           $fileName=date('Ymdms').'.'.$file->getClientOriginalExtension();
+           $file->storeAs('/uploads',$fileName);
+
+        
+        
+        }
+
+        {
             Item::create([
                 'name' =>$request->Item_name,
                 'category_item' =>$request->category_item,
                 'category_id'=>$request->category_id,
+                'image' =>$fileName,
                 'price' =>$request->price,
                 'details' =>$request->details
             
@@ -31,4 +44,5 @@ class Itemcontroller extends Controller
             return redirect()->back();
         }
 
+}
 }

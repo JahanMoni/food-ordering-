@@ -19,6 +19,7 @@
                         <th scope="col"> name</th>
                         <th scope="col"> category_item</th>
                         <th scope="col">Category ID</th>
+                        <th scope="col">Image</th>
                         <th scope="col"> price</th>
                         <th scope="col"> details</th>
                         
@@ -34,8 +35,14 @@
     <td>{{$item->name}}</td>
     <td>{{$item->category_item}}</td>
     <td>{{$item->category->name}}</td>
+    <td>
+                <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="item image">
+            </td>
     <td>{{$item->price}}</td>
     <td>{{$item->details}}</td>
+    <td>
+                <a href="" class="btn btn-success">View</a>
+            </td>
 
 
         </tr>
@@ -51,7 +58,8 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
-            <form action="{{route('items.store')}}" method="POST">
+            <form action="{{route('items.store')}}" method="POST"enctype="multipart/form-data">
+
                 @csrf
                 
 
@@ -81,6 +89,12 @@
                         <textarea id="category_item" class="form-control" name="category_item"
                             placeholder="Enter product category_item" style="background-color: white"></textarea>
                     </div>
+                    <div class="form-group">
+                           <label for="exampleFormControlFile1">Image</label>
+                            <div class="custom-file">
+                                 <input type="file" class="form-control" name='image' >
+   
+                               </div>
 
                     <div class="form-group">
                         <label for="price">price</label>
