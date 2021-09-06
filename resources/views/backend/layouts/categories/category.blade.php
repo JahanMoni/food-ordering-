@@ -14,7 +14,9 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Category Name</th>
+            <th scope="col">Image</th>
             <th scope="col">Status</th>
+            <th scope="col">Action</th>
 
         </tr>
     </thead>
@@ -23,16 +25,28 @@
 
 
         @foreach($categories as $category)
+        
+
         <tr>
-            <th scope="row">{{$category->id}}</th>
-            <td>{{$category->name}}</td>
-            <td>{{$category->status}}</td>
+<th scope="row">{{$category->id}}</th>>
+    <td>{{$category->name}}</td>
+    <td>
+                <img src="{{url('/uploads/'.$category->image)}}" width="100px" alt="category image">
+            </td>
+    <td>{{$category->status}}</td>
+    
+    
+    <td scope="row"><a href="#" class="btn btn-primary">View</a></td>
 
 
         </tr>
+
+
+
         @endforeach
     </tbody>
 </table>
+{{$categories->links('pagination::bootstrap-4')}}
 
 
 
@@ -44,7 +58,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
-            <form action="{{route('categories.store')}}" method="POST">
+            <form action="{{route('categories.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="modal-header">
@@ -56,6 +70,12 @@
                         <input type="text" class="form-control" name="Category_name" placeholder="Enter Category name"
                             style="background-color: white">
                     </div>
+                    <div class="form-group">
+                           <label for="exampleFormControlFile1">Image</label>
+                            <div class="custom-file">
+                                 <input type="file" class="form-control" name='image' >
+   
+                               </div>
 
                     <div class="form-group">
                         <label for="description">Description</label>

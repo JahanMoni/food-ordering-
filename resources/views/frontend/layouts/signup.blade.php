@@ -27,11 +27,7 @@ body {
   height: 100vh;
 }
 </style>
-@if(session()->has('message'))
-    <div class="alert alert-success">
-        {{ session()->get('message') }}
-    </div>
-@endif
+
 
 <form action="{{route('user.signup.store')}}" type="form" method="post">
 @csrf
@@ -44,12 +40,25 @@ body {
     
 <div class="d-flex justify-content-center"><h3><b>Please Signup Here</b></h3></div>
 <div class="card-body">
-
+@if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+@if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 <div class="form-group">
 <label for="full_name" class="cols-sm-2 control-label">Full Name</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name" />
+<input required type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name" />
 </div>
 </div>
 </div>
@@ -58,7 +67,7 @@ body {
  <label for="phone_number" class="cols-sm-2 control-label">Phone Number</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input type="number" class="form-control" name="phone_number" id="name" placeholder="Enter your Phone Number">
+<input required type="number" class="form-control" name="phone_number" id="name" placeholder="Enter your Phone Number">
 </div>
 </div>
 </div>
@@ -66,7 +75,7 @@ body {
  <label for="address" class="cols-sm-2 control-label"> Address</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input type="text" class="form-control" name=" address" id="name" placeholder="Enter your Name">
+<input required type="text" class="form-control" name=" address" id="name" placeholder="Enter your Name">
 </div>
 </div>
 </div>
@@ -76,7 +85,7 @@ body {
 <label for="email" class="cols-sm-2 control-label">Email</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+<input required type="email" class="form-control" name="email" id="email" placeholder="Enter your Email" />
 </div>
 </div>
 </div>
@@ -84,7 +93,7 @@ body {
 <label for="password" class="cols-sm-2 control-label">Password</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+<input required type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
 </div>
 </div>
 </div>

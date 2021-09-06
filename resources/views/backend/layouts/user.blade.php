@@ -12,7 +12,7 @@
             <th scope="col">Type</th>
             <th scope="col">Address</th>
             <th scope="col">Phone Number</th>
-            <th scope="col">Password</th>
+            
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -25,10 +25,11 @@
             <td>{{$data->role}}</td>
             <td>{{$data->phone_number}}</td>
             <td>{{$data->address}}</td>
-            <td>{{$data->password}}</td>
-            <td>view</td>
+         
+            <td scope="row"><a href="#" class="btn btn-primary">View</a></td>
         </tr>
         @endforeach
         </tbody>
     </table>
+    {{$user->links('pagination::bootstrap-4')}}
 @endsection

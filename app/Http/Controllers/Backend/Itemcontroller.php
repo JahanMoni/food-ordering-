@@ -33,9 +33,9 @@ class Itemcontroller extends Controller
 
         {
             Item::create([
-                'name' =>$request->Item_name,
-                'category_item' =>$request->category_item,
-                'category_id'=>$request->category_id,
+                'item_name' =>$request->Item_name,
+                
+                
                 'image' =>$fileName,
                 'price' =>$request->price,
                 'details' =>$request->details

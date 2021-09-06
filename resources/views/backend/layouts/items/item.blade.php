@@ -16,15 +16,13 @@
   <thead>
   <tr>
                         <th scope="col">id</th>
-                        <th scope="col"> name</th>
-                        <th scope="col"> category_item</th>
-                        <th scope="col">Category ID</th>
+                        <th scope="col"> Item_name</th>
+                        
+                       
                         <th scope="col">Image</th>
                         <th scope="col"> price</th>
                         <th scope="col"> details</th>
-                        
-
-                        <th class="text text-center"scope="col">Action</th>
+                        <th scope="col">Action</th>
                     </tr>
   </thead>
   <tbody>
@@ -32,17 +30,15 @@
 
 <tr>
 <th scope="row">{{$item->id}}</th>>
-    <td>{{$item->name}}</td>
-    <td>{{$item->category_item}}</td>
-    <td>{{$item->category->name}}</td>
+    <td>{{$item->item_name}}</td>
+ 
+    
     <td>
                 <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="item image">
             </td>
     <td>{{$item->price}}</td>
     <td>{{$item->details}}</td>
-    <td>
-                <a href="" class="btn btn-success">View</a>
-            </td>
+    <td scope="row"><a href="#" class="btn btn-primary">View</a></td>
 
 
         </tr>
@@ -84,11 +80,7 @@
                             style="background-color: white">
                     </div>
 
-                    <div class="form-group">
-                        <label for="category_item">category_item</label>
-                        <textarea id="category_item" class="form-control" name="category_item"
-                            placeholder="Enter product category_item" style="background-color: white"></textarea>
-                    </div>
+                    
                     <div class="form-group">
                            <label for="exampleFormControlFile1">Image</label>
                             <div class="custom-file">

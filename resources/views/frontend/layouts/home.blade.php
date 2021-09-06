@@ -167,6 +167,9 @@
 			</div>
 		</div>
 	</div>
+	<div class="text-center">
+  <a class="btn btn-success btn-lg" href="{{route('category')}}" role="button">View All categorys</i></a>
+  </div>
 	<!-- End Menu -->
 	
 	<!-- Start Gallery -->
@@ -216,6 +219,9 @@
 			</div>
 		</div>
 	</div>
+	<div class="text-center">
+  <a class="btn btn-success btn-lg" href="{{route('item')}}" role="button">View All items</i></a>
+  </div>
 	<!-- End Gallery -->
 	
 	<!-- Start Customer Reviews -->
@@ -239,7 +245,7 @@
 								</div>
 								<h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
 								<h6 class="text-dark m-0">Web Developer</h6>
-								<p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+								<p class="m-0 pt-3">Excellent customer service.  was very friendly, patient and helpful in helping us find what we were looking for.</p>
 							</div>
 							<div class="carousel-item text-center">
 								<div class="img-box p-1 border rounded-circle m-auto">

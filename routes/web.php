@@ -12,7 +12,8 @@ use App\Http\Controllers\Backend\Employeecontroller;
 use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Frontend\UserController;
-
+use App\Http\Controllers\Frontend\UserItemController;
+use App\Http\Controllers\Frontend\UserCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',[FrontendHome::class,'home'])->name(name:'home');
+Route::get('/login',[UserController::class,'login'])->name('customer.login');
+Route::post('/login/post',[UserController::class,'doLogin'])->name('customer.do.login');
+Route::get('/item',[UserItemController::class,'item'])->name('item');
+Route::get('/category',[UserCategoryController::class,'category'])->name('category');
+
+
 
 
 Route::get('admin/login',[BackendUser::class,'login'])->name('admin.login');
