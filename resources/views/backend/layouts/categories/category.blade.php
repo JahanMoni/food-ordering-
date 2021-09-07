@@ -36,7 +36,11 @@
     <td>{{$category->status}}</td>
     
     
-    <td scope="row"><a href="#" class="btn btn-primary">View</a></td>
+    <td scope="row"><a href="#" class="btn btn-primary">View</a>
+    
+    <a href="#" class="btn btn-warning">Edit</a>
+    <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
+</td>
 
 
         </tr>

@@ -2,40 +2,17 @@
            @section('content')
            <h1>Customer List</h1>
            
-           <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-  Launch demo modal
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
 
-<table class="table">
-  <caption>List of users</caption>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col">id/th>
-      <th scope="col">category-name</th>
-      <th scope="col">status</th>
-      <th scope="col">action</th>
+      <th scope="col">ID</th>
+      <th scope="col">FName</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
     </tr>
   </thead>
   <tbody>
@@ -44,9 +21,22 @@
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
+      <td>@mdo</td>
+      
+      <td scope="row"><a href="#" class="btn btn-primary">View</a>
     
+    <a href="#" class="btn btn-warning">Edit</a>
+    <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
+</td>
+    </tr>
     
   </tbody>
 </table>
+    
+
+
+
+
+
 
            @endsection

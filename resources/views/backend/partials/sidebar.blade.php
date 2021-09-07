@@ -41,6 +41,11 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Offer
                             </a>
+                            <a class="nav-link" href="{{route('customers.customer')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                               Customer
+                            </a>
+
                             <a class="nav-link" href="{{route('orders.order')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Order

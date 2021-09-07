@@ -18,7 +18,7 @@
                         <th scope="col">id</th>
                         <th scope="col"> Item_name</th>
                         
-                       
+                        <th scope="col"> category_name</th>
                         <th scope="col">Image</th>
                         <th scope="col"> price</th>
                         <th scope="col"> details</th>
@@ -31,15 +31,18 @@
 <tr>
 <th scope="row">{{$item->id}}</th>>
     <td>{{$item->item_name}}</td>
- 
+    <td>{{$item->category_name}}</td>
     
     <td>
                 <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="item image">
             </td>
     <td>{{$item->price}}</td>
     <td>{{$item->details}}</td>
-    <td scope="row"><a href="#" class="btn btn-primary">View</a></td>
-
+    <td scope="row"><a href="#" class="btn btn-primary">View</a>
+    
+                <a href="#" class="btn btn-warning">Edit</a>
+                <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
+            </td>
 
         </tr>
         @endforeach
@@ -68,9 +71,9 @@
 
                 <div class="form-group">
                             <label for="item_name">Select Category</label>
-                            <select class="form-control" name="category_id" id="">
+                            <select class="form-control" name="category_name" id="">
                                 @foreach($categories as $cat)
-                                <option value="{{$cat->id}}">{{$cat->name}}</option>
+                                <option value="{{$cat->name}}">{{$cat->name}}</option>
                                 @endforeach
                             </select>
                             </div>

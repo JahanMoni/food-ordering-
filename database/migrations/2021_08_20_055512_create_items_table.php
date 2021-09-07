@@ -16,10 +16,9 @@ class CreateItemsTable extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->string('item_name',100);
-           
-           
             
-            
+            $table->string('category_name',100);
+           
             $table->double('price',10,2)->default(0.00);
             $table->integer('stock')->default(0);
             $table->text('details')->nullable();
