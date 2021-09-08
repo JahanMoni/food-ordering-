@@ -34,7 +34,7 @@ class Itemcontroller extends Controller
         {
             Item::create([
                 'item_name' =>$request->Item_name,
-                'category_name' =>$request->category_name,
+                'category_id' =>$request->category_id,
                 
                 'image' =>$fileName,
                 'price' =>$request->price,
@@ -43,6 +43,18 @@ class Itemcontroller extends Controller
             ]); 
             return redirect()->back();
         }
+    }
 
-}
+        public function  delete($id)
+        {
+         
+            $items=Item::find($id);
+            if($items)
+            {
+                $items->delete();
+                return redirect()->back()->with('message','item Deleted successfully.');
+            }
+            return redirect()->back()->with('message','No item found to delete.');
+        }
+
 }

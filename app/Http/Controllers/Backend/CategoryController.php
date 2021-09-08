@@ -36,5 +36,16 @@ class CategoryController extends Controller
         return redirect()->back();
     }
 }
+public function  delete($id)
+        {
+         
+            $categories=category::find($id);
+            if($categories)
+            {
+                $categories->delete();
+                return redirect()->back()->with('message','category  Deleted successfully.');
+            }
+            return redirect()->back()->with('message','No category found to delete.');
+        }
     
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\customer;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -33,10 +34,10 @@ class UserController extends Controller
         return redirect()->route('admin.login');
     }
     
-    public function customerList()
+    public function customer()
     {
-        $user=User::where('role','=','guest')->get();
-        return view('backend.layouts.guest',compact('user'));
+        $customers=user::where('role','=','customer')->get();
+        return view('backend.layouts.customers.customer',compact('customers'));
     }
     public function userList()
     {

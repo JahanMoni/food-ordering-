@@ -6,7 +6,7 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\Itemcontroller;
 use App\Http\Controllers\Backend\OfferController;
 use App\Http\Controllers\Backend\OrderController;
-use App\Http\Controllers\Backend\CustomerController;
+
 use App\Http\Controllers\Backend\Registrationcontroller;
 use App\Http\Controllers\Backend\Employeecontroller;
 use App\Http\Controllers\Backend\Restaurantcontroller;
@@ -50,13 +50,18 @@ Route::get('/dashboard',[DashboardController::class,'dash'])->name('dashboard.da
 
 Route::get('/category',[CategoryController::class,'category'])->name('categories.category');
 Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
+Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');
 
 Route::get('/item',[ItemController::class,'item'])->name('items.item');
 Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
+Route::get('/item/delete/{id}',[ItemController::class,'delete'])->name('items.delete');
+
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
-Route::get('/customer',[CustomerController::class,'customer'])->name('customers.customer');
+
+
+
 
 Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');
 Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaurant.store');
@@ -66,7 +71,7 @@ Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaura
 Route::get('/signup',[UserController::class,'signup'])->name('User.signup');
 Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
 
-Route::get('/customers',[BackendUser::class,'customerList'])->name('customer.list');
+Route::get('/customers',[BackendUser::class,'customer'])->name('customers.customer');
 Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
 
 

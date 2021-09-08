@@ -8,7 +8,7 @@
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">FName</th>
+      <th scope="col">Name</th>
       <th scope="col">Phone Number</th>
       <th scope="col">Email</th>
       <th scope="col">Status</th>
@@ -16,19 +16,26 @@
     </tr>
   </thead>
   <tbody>
+
+  @foreach($customers as $customer)
+
+
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
-      
+      <th scope="row">{{$customer ->id}}</th>
+      <td>{{$customer ->name}}</td>
+      <td>{{$customer->phone_number}}</td>
+      <td>{{$customer ->email}}</td>
+      <td>{{$customer ->status}}</td>
+      <td>{{$customer ->action}}</td>
       <td scope="row"><a href="#" class="btn btn-primary">View</a>
     
     <a href="#" class="btn btn-warning">Edit</a>
+          <br> </br>
+    
     <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
 </td>
     </tr>
+    @endforeach
     
   </tbody>
 </table>
@@ -39,4 +46,4 @@
 
 
 
-           @endsection
+@endsection
