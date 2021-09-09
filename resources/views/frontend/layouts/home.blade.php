@@ -59,11 +59,11 @@
 					</div>
 				</div>
 			</div>
-	@php 
-$items=['1','2','3','4','5','6'];
-@endphp
+			
+
 @foreach($items as $data)
-	<div class="menu-box">
+
+<div class="menu-box">
 		<div class="container">
 			<div class="row">
 				
@@ -71,18 +71,16 @@ $items=['1','2','3','4','5','6'];
 			</div>
 			
 				
-			<div class="row special-list">
-				<div class="col-lg-4 col-md-6 special-grid drinks">
-					<div class="gallery-single fix">
-						<img src="{{url('/frontend/images/img-01.jpg')}}" class="img-fluid" alt="Image">
-						<div class="why-text">
-						    
-							<h4>{{$data->item_name}}</h4>
-							<p>{{$data->details}}</p>
-							<h5> {{$data->price}}</h5>
-						</div>
-					</div>
-				</div>
+			<div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="features-item">
+            <p class="card-text">{{$data->item_name}}</p>
+            <img width="200px;" src="{{ url('uploads/'.$data->image) }}" style="    width: 250px;
+            height: 250px">
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">{{$data->price}} </small>
+
+                     </div>
 						
 						
 					</div>
@@ -94,9 +92,8 @@ $items=['1','2','3','4','5','6'];
 		</div>
 	</div>
 	</div>
-	
-  
   @endforeach
+  
   <div class="text-center">
   <a class="btn btn-success btn-lg" href="{{route('item')}}" role="button">View All items</i></a>
   </div>
@@ -105,11 +102,16 @@ $items=['1','2','3','4','5','6'];
 	<!-- End Menu -->
 	
 	<!-- Start Gallery -->
+	
 	<div class="gallery-box">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
+					<br> </br>
+					<br> </br>
+					<br> </br>
+					<br> </br>
 						<h2>Gallery</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>

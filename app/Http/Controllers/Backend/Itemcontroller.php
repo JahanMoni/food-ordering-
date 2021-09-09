@@ -12,9 +12,7 @@ class Itemcontroller extends Controller
     public function Item()
     {
         $items=Item::with('category')->paginate(3);
-        //        dd($products);
-              
-
+        
         $categories=Category::all();
         return view('backend.layouts.items.item',compact('items','categories'));
     }
@@ -34,7 +32,7 @@ class Itemcontroller extends Controller
         {
             Item::create([
                 'item_name' =>$request->Item_name,
-                'category_id' =>$request->category_id,
+                'category_id' =>$request->category_name,
                 
                 'image' =>$fileName,
                 'price' =>$request->price,

@@ -19,8 +19,8 @@ class CreateItemsTable extends Migration
             
             $table->string('category_id',100);
            
-            $table->double('price',10,2)->default(0.00);
-            $table->integer('stock')->default(0);
+            $table->double('price',10,2)->default('0.00');
+            $table->integer('stock')->default('0');
             $table->text('details')->nullable();
             $table->string('image')->nullable();
             $table->string('status',10)->default('active');
