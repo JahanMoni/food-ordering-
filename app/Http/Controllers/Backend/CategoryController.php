@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\models\Category;
+use App\models\Item;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -47,5 +48,14 @@ public function  delete($id)
             }
             return redirect()->back()->with('message','No category found to delete.');
         }
+        public function allitem($id)
+        {
+            $items=item::where('category_id',$id)->get();
+    //        $category=Category::with('products')->find($id);//using relationshop
+    //        dd($products);
+    
+            return view('backend.layouts.categories.category-item',compact('items'));
+        }
+        
     
 }

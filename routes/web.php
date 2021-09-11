@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name(name:'home');
 Route::get('/login',[UserController::class,'login'])->name('customer.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('customer.do.login');
-Route::get('/item',[UserItemController::class,'item'])->name('item');
+Route::get('/item/{id}',[UserItemController::class,'item'])->name('item');
 Route::get('/category',[UserCategoryController::class,'category'])->name('category');
 
 
@@ -51,6 +51,8 @@ Route::get('/dashboard',[DashboardController::class,'dash'])->name('dashboard.da
 Route::get('/category',[CategoryController::class,'category'])->name('categories.category');
 Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
 Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');
+Route::get('/category/{id}/item',[CategoryController::class,'allitem'])->name('category.item');
+
 
 Route::get('/item',[ItemController::class,'item'])->name('items.item');
 Route::post('/item/store',[ItemController::class,'store'])->name('items.store');

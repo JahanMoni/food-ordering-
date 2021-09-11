@@ -42,65 +42,47 @@
 	
 	<!-- Start Menu -->
 	<br> </br>
-	<div class="col-lg-12">
-					<div class="heading-title text-center">
-						<h2>Special Menu</h2>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
-					</div>
-					<div class="row">
-				<div class="col-lg-12">
-					<div class="special-menu text-center">
-						<div class="button-group filter-button-group">
-							<button class="active" data-filter="*">All</button>
-							<button data-filter=".drinks">Drinks</button>
-							<button data-filter=".lunch">Lunch</button>
-							<button data-filter=".dinner">Dinner</button>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-
-@foreach($items as $data)
 
 <div class="menu-box">
 		<div class="container">
 			<div class="row">
-				
-				
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Item</h2>
+						<p>Our All Item list</p>
+					</div>
+				</div>
 			</div>
 			
 				
-			<div class="row">
-        <div class="col-xs-12 col-sm-4">
-          <div class="features-item">
-            <p class="card-text">{{$data->item_name}}</p>
-            <img width="200px;" src="{{ url('uploads/'.$data->image) }}" style="    width: 250px;
-            height: 250px">
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">{{$data->price}} </small>
+			<div class="row special-list">
 
-                     </div>
-						
-						
+			@foreach($items as $item)
+				<div class="col-lg-4 col-md-6 special-grid drinks">
+					<div class="gallery-single fix">
+						<img src="{{url('uploads/'.$item->image)}}" class="img-fluid" alt="Image">
+						<div class="why-text">
+							<h4>Item-Name</h4>
+							<p class="card-text"> Item-{{$item->item_name}}</p>
+							<h5>  Price-{{$item->price}} </h5>
+						</div>
 					</div>
 				</div>
-				
-				
-				
+			@endforeach
 			</div>
 		</div>
 	</div>
+	<div class="text-center">
+  <a class="btn btn-success btn-lg" href="{{route('category')}}" role="button">View All items</i></a>
 	</div>
-  @endforeach
-  
-  <div class="text-center">
-  <a class="btn btn-success btn-lg" href="{{route('item')}}" role="button">View All items</i></a>
-  </div>
-  
-  
+
+	
 	<!-- End Menu -->
 	
+
+
+
+
 	<!-- Start Gallery -->
 	
 	<div class="gallery-box">
@@ -155,7 +137,7 @@
 	</div>
 	<div class="text-center">
   <a class="btn btn-success btn-lg" href="{{route('category')}}" role="button">View All categorys</i></a>
-</div>
+	</div>
 	<!-- End Gallery -->
 	
 	<!-- Start Customer Reviews -->
