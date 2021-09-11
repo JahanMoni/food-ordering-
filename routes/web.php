@@ -29,8 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name(name:'home');
 Route::get('/login',[UserController::class,'login'])->name('customer.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('customer.do.login');
-Route::get('/item/{id}',[UserItemController::class,'item'])->name('item');
-Route::get('/category',[UserCategoryController::class,'category'])->name('category');
+Route::get('/item',[UserItemController::class,'item'])->name('items');
+Route::get('/category',[UserCategoryController::class,'category'])->name('categories');
 
 
 

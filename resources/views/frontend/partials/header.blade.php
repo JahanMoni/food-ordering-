@@ -11,10 +11,10 @@
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="{{route('home')}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('category')}}">Category</li>
-						<li class="nav-item"><a class="nav-link" href="{{route('item')}}">Item</li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('categories')}}">Category</li>
+						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">Restaurant Info</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Order</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('User.signup')}}">sign up</a></li>
                         <a class="nav-item nav-link" href="{{route('customer.login')}}">Login</a>
 						

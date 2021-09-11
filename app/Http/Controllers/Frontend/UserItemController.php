@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 
 class UserItemController extends Controller
 {
-    public function item($id)
+    public function item()
     {
-        $items=item::find($id);
-        return view('frontend.layouts.item',compact('item'));
+        $items=item::all();
+        return view('frontend.layouts.item',compact('items'));
     }
    
 }

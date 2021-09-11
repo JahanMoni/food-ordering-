@@ -53,7 +53,19 @@
 					</div>
 				</div>
 			</div>
-			
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="special-menu text-center">
+						<div class="button-group filter-button-group">
+							<button class="active" data-filter="*">All</button>
+							<button data-filter=".drinks">Drinks</button>
+							<button data-filter=".lunch">Lunch</button>
+							<button data-filter=".dinner">Dinner</button>
+						</div>
+					</div>
+				</div>
+			</div>
+				
 				
 			<div class="row special-list">
 
@@ -73,7 +85,7 @@
 		</div>
 	</div>
 	<div class="text-center">
-  <a class="btn btn-success btn-lg" href="{{route('category')}}" role="button">View All items</i></a>
+  <a class="btn btn-success btn-lg" href="{{route('items')}}" role="button">View All items</i></a>
 	</div>
 
 	
@@ -99,39 +111,22 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="tz-gallery">
+
 				<div class="row">
+				@foreach($categories as $category)
 					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-01.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-01.jpg')}}" alt="Gallery Images">
+						
+							<img class="img-fluid" src="{{url('uploads/'.$category->image)}}" alt="Gallery Images">
 						</a>
 					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-02.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-02.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-03.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-03.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-04.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-04.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-05.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-05.jpg')}}" alt="Gallery Images">
-						</a>
-					</div> 
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-06.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-06.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
+					
+					
+					
+					
 				</div>
+				@endforeach	
 			</div>
 		</div>
 	</div>
