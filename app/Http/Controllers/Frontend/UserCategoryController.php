@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class UserCategoryController extends Controller
 {
-    public function category()
+    public function Category()
     {
-        $categories=category::all();
-        return view('frontend.layouts.category',compact('categorys'));
+        
+        return view('frontend.layouts.category');
     }
     
 }

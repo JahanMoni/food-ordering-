@@ -11,7 +11,7 @@
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="{{route('home')}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('categories')}}">Category</li>
+                        <li class="nav-item"><a class="nav-link" href="#">Category</li>
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">Order</a></li>

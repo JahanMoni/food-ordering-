@@ -58,9 +58,9 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="special-menu text-center">
-						@foreach($category as $cat)
+						@foreach( $categoryWiseItem as $cat)
 						<div class="button-group filter-button-group">
-							<button><a href="{{route('categorywise',$cat->id)}}" class="active" data-filter="*">{{$cat->name}}</a></button>
+							<button><a href="#" class="active" data-filter="*">{{$cat->name}}</a></button>
 							
 						</div>
 						@endforeach

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Category;
+
 use App\Models\Item;
+use App\Models\Category;
+
+
 use Illuminate\Http\Request;
 
 class homecontroller extends Controller
@@ -12,11 +15,17 @@ class homecontroller extends Controller
     public function home()
     {
         $items=Item::latest()->take(6)->get();
-        return view('frontend.layouts.home',compact('items'));
+         $category = Category::all();
+        return view('frontend.layouts.home',compact('items','category'));
         }
-        public function category()
+
+        public function categoryitem($id)
+
         {
-            $categories=category::take(6)->get();
-            return view('frontend.layouts.home',compact('categories'));
-            }
+            $items=Item::all();
+            $categoryWiseItem=Item::where('category_id',$id)->get();
+            
+            return view ('frontend.layouts.categorywise',compact('categoryWiseItem','items'));
+        }
+        
 }
