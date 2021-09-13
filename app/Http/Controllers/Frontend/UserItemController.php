@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-
+use App\Models\Category;
 use App\Models\Item;
 use Illuminate\Http\Request;
 
@@ -16,9 +16,11 @@ class UserItemController extends Controller
     }
     public function itemview($id)
     {
-       
+        
+        $Category=Category::all();
         $items=item::find($id);
-        return view('frontend.layouts.itemview',compact('items'));
+        return view('frontend.layouts.itemview',compact('items','Category'));
     }
+
     
 }
