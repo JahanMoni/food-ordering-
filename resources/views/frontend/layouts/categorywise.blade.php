@@ -58,9 +58,9 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="special-menu text-center">
-						@foreach( $categoryWiseItem as $cat)
+						@foreach( $Category as $cat)
 						<div class="button-group filter-button-group">
-							<button><a href="#" class="active" data-filter="*">{{$cat->name}}</a></button>
+							<button><a href="{{route('categorywise',$cat->id)}}" class="active" data-filter="*">{{$cat->name}}</a></button>
 							
 						</div>
 						@endforeach
@@ -71,7 +71,7 @@
 				
 			<div class="row special-list">
 
-			@foreach($items as $item)
+			@foreach($categoryWiseItem as $item)
 				<div class="col-lg-4 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
 						<img src="{{url('uploads/'.$item->image)}}" class="img-fluid" alt="Image">

@@ -8,8 +8,7 @@
 </button>
 
 
-
-
+ 
 
        
            <table class="table table-striped">
@@ -31,7 +30,7 @@
 <tr>
 <th scope="row">{{$item->id}}</th>>
     <td>{{$item->item_name}}</td>
-    <td>{{$item->category->name}}</td>
+    <td>{{optional($item->category)->name}}</td>
     
     <td>
                 <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="item image">

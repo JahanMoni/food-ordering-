@@ -72,7 +72,10 @@
 			<div class="row special-list">
 
 			@foreach($items as $item)
+			<a href="{{route('itemview',$item->id)}}">
 				<div class="col-lg-4 col-md-6 special-grid drinks">
+				
+
 					<div class="gallery-single fix">
 						<img src="{{url('uploads/'.$item->image)}}" class="img-fluid" alt="Image">
 						<div class="why-text">
@@ -80,8 +83,11 @@
 							<p class="card-text"> Item-{{$item->item_name}}</p>
 							<h5>  Price-{{$item->price}} </h5>
 						</div>
+					
 					</div>
+					</a>
 				</div>
+              
 			@endforeach
 			</div>
 		</div>

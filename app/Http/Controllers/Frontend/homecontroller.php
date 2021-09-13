@@ -22,10 +22,12 @@ class homecontroller extends Controller
         public function categoryitem($id)
 
         {
-            $items=Item::all();
+            $Category=Category::all();
             $categoryWiseItem=Item::where('category_id',$id)->get();
             
-            return view ('frontend.layouts.categorywise',compact('categoryWiseItem','items'));
+            
+            return view ('frontend.layouts.categorywise',compact('categoryWiseItem','Category'));
         }
+        
         
 }

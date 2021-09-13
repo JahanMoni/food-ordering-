@@ -14,5 +14,11 @@ class UserItemController extends Controller
         $items=item::all();
         return view('frontend.layouts.item',compact('items'));
     }
-   
+    public function itemview($id)
+    {
+       
+        $items=item::find($id);
+        return view('frontend.layouts.itemview',compact('items'));
+    }
+    
 }
