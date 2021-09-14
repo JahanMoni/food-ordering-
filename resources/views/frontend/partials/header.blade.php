@@ -12,9 +12,15 @@
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="{{route('home')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Category</li>
+						<form action="{{route('search')}}" method="get">
+{{--                            @csrf--}}
+                        <input style="width: 250px;" type="text" placeholder="Search" name="search" class="form-control">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa fa-search"></i></button>
+                        </form>
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">Order</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('orders')}}">Order</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('User.signup')}}">sign up</a></li>
                         <a class="nav-item nav-link" href="{{route('customer.login')}}">Login</a>
 						

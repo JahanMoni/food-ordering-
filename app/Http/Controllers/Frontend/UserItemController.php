@@ -17,9 +17,18 @@ class UserItemController extends Controller
     public function itemview($id)
     {
         
-        $Category=Category::all();
+        $categories=Category::all();
         $items=item::find($id);
-        return view('frontend.layouts.itemview',compact('items','Category'));
+        return view('frontend.layouts.itemview',compact('items','categories'));
+    }
+    public function search()
+    {
+        
+        $key=request()->search;
+        $items=item::where('item_name','LIKE',"%{$key}%")->get();
+
+
+        return view('frontend.layouts.search',compact('items'));
     }
 
     

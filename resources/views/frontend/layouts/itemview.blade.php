@@ -326,11 +326,11 @@ label.radio input:checked+span::before {
             </div>
            
             <div class="card mt-2"> <span>Similar items:</span>
-            @foreach(  $Category as $cat)
+            @foreach($categories as $category)
                 <div class="similar-products mt-2 d-flex flex-row">
-                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="{{url('uploads/'.$cat->image)}}}" class="card-img-top" alt="...">
+                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="{{url('uploads/'.$category->image)}}}" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h6 class="card-title">Price-{{$cat->price}}.BDT</h6>
+                            <h6 class="card-title">Price-{{$category->price}}.BDT</h6>
                         </div>
                     </div>
                     

@@ -13,7 +13,7 @@ use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\UserItemController;
-
+use App\Http\Controllers\Frontend\FoodOrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,6 +32,8 @@ Route::post('/login/post',[UserController::class,'doLogin'])->name('customer.do.
 Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/category/item/{id}',[FrontendHome::class,'categoryitem'])->name('categorywise');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
+ Route::get('/search',[UserItemController::class,'search'])->name('search');
+ Route::get('/order',[FoodOrderController::class,'order'])->name('orders');
 
 
 

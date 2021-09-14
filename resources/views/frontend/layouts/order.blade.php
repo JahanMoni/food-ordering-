@@ -16,7 +16,7 @@ body {
     
 
   
-    background-image:url('https://images.unsplash.com/photo-1515669097368-22e68427d265?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjA5fHxmb29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-image:url('https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg?size=626&ext=jpg');
   background-position:center;
   background-size:cover;
 
@@ -36,8 +36,9 @@ body {
 <div class="card">
     <br> </br>
     <br> </br>
+    <br> </br>
     
-<div class="d-flex justify-content-center"><h3><b>Please Signup Here</b></h3></div>
+<div class="d-flex justify-content-center"><h3><b> Order Here</b></h3></div>
 <div class="card-body">
 @if(session()->has('confirm'))
     <div class="alert alert-success">
@@ -99,7 +100,7 @@ body {
 <div class="form-group">
 
 <div class="form-group ">
-<button type="submit" class="btn btn-success btn-lg btn-block login-button" href=" " >Submit</button>
+<button type="submit" class="btn btn-success btn-lg btn-block login-button" href="# " >Order Now</button>
 <br> </br>
 <a href=" " target="_blank" >Forgot Password?</a>
 
