@@ -21,8 +21,19 @@
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('orders')}}">Order</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('User.signup')}}">sign up</a></li>
-                        <a class="nav-item nav-link" href="{{route('customer.login')}}">Login</a>
+                       
+
+						@if(auth()->user())
+						<a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>
+                        <a class="nav-item nav-link" href="">{{auth()->user()->full_name}}</a>
+    
+
+    @else
+
+    <a class="btn btn-success" href= "{{route('customer.login')}}" role="button">Login</a>
+    <a class="btn btn-light" href= "{{route('User.signup')}}" role="button">Signup</a>
+    @endif
+                        
 						
 				
                      <li class="nav-item dropdown">

@@ -34,7 +34,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
  Route::get('/search',[UserItemController::class,'search'])->name('search');
  Route::get('/order',[FoodOrderController::class,'order'])->name('orders');
-
+ Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 
 
 Route::get('admin/login',[BackendUser::class,'login'])->name('admin.login');

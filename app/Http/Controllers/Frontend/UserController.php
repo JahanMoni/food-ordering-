@@ -31,9 +31,9 @@ class UserController extends Controller
                'full_name'=>$request->full_name,
                'phone_number'=>$request->phone_number,
                'email'=>$request->email,
-               'address'=>$request-> address,
+               'address'=>$request->address,
                'role'=>'customer',
-               'password'=>bcrypt($request->customer_email),
+               'password'=>bcrypt($request->password),
             ]);
     
             return redirect()->back()->with('success','User Registration Successfully.');
@@ -52,8 +52,9 @@ class UserController extends Controller
     
             if(Auth::attempt($credentials))
             {
+                
                 return redirect()->route('home');
-                //user logged in
+              
             }
             return redirect()->back()->with('message','invalid user info.');
         }

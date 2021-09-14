@@ -46,19 +46,10 @@ body {
                 </div>
             @endif
 
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
+               
+                  
 
-            <form action="{{route('customer.do.login')}}" type="form" method="Post">
-                @csrf
-
+            
 
 <body>
     <div id="login">
@@ -67,12 +58,13 @@ body {
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
+                    <div class="card-body">
                     @if(session()->has('message'))
                             <span class="alert alert-danger">{{session()->get('message')}}</span>
                     @endif
-            <div class="card-body">
+          
 
-                <form action="{{route('admin.login.post')}}" method="post">
+                <form action="{{route('customer.do.login')}}" method="post">
                     @csrf
                         
                             <h3 class="text-center text-info">Login</h3>
@@ -92,7 +84,7 @@ body {
                             </div>
                             
                                
-                                <button type="submit" class="btn btn-success btn-lg btn-block login-button" href=" " >Submit</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
                         </form>
                     </div>
