@@ -20,7 +20,7 @@
                         </form>
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('orders')}}">Order</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
                        
 
 						@if(auth()->user())
@@ -31,7 +31,7 @@
     @else
 
     <a class="btn btn-success" href= "{{route('customer.login')}}" role="button">Login</a>
-    <a class="btn btn-light" href= "{{route('User.signup')}}" role="button">Signup</a>
+    <a class="btn btn-light" href= "{{route('User.signup')}}" >Signup</a>
     @endif
                         
 						

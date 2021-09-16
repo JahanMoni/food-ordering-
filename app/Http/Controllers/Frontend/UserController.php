@@ -23,6 +23,7 @@ class UserController extends Controller
             'phone_number'=>'required',
             'email'=>'required|email|unique:users',
             'address'=>'required',
+            
             'password'=>'required|min:6'
            
         ]);
@@ -32,6 +33,8 @@ class UserController extends Controller
                'phone_number'=>$request->phone_number,
                'email'=>$request->email,
                'address'=>$request->address,
+               'action'=>$request->action,
+               'status'=>$request->status,
                'role'=>'customer',
                'password'=>bcrypt($request->password),
             ]);

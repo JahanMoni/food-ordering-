@@ -13,7 +13,7 @@ use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\UserItemController;
-use App\Http\Controllers\Frontend\FoodOrderController;
+use App\Http\Controllers\Frontend\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,19 +33,21 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/category/item/{id}',[FrontendHome::class,'categoryitem'])->name('categorywise');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
  Route::get('/search',[UserItemController::class,'search'])->name('search');
- Route::get('/order',[FoodOrderController::class,'order'])->name('orders');
+ Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
+ Route::get('/signup',[UserController::class,'signup'])->name('User.signup');
+ Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
+
+
+
 
 
 Route::get('admin/login',[BackendUser::class,'login'])->name('admin.login');
 Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.login.post');
  Route::group(['prefix'=>'admin','middleware'=>'auth'],function()
- {
+{
 
-
-Route::get('/',[HomeController::class,'home'])->name('dashboard');
-Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
-
+    Route::group(['middleware'=>'role'],function (){
 
 
 Route::get('/dashboard',[DashboardController::class,'dash'])->name('dashboard.dash');
@@ -72,8 +74,6 @@ Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaura
 
 
 
-Route::get('/signup',[UserController::class,'signup'])->name('User.signup');
-Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
 
 Route::get('/customers',[BackendUser::class,'customer'])->name('customers.customer');
 Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
@@ -86,4 +86,15 @@ Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
 Route::get('/registration',[Registrationcontroller::class,'registration'])->name('registrations.registration');
 Route::post('/registration/store',[Registrationcontroller::class,'store'])->name('registrations.store');
 Route::get('/employee',[Employeecontroller::class,'employee'])->name('employees.employee');
+});
+
+Route::group(['prefix'=>'manager','middleware'=>'manager'],function ()
+{
+
+Route::get('/item',[ItemController::class,'item'])->name('items.item');
+Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
+});
+Route::get('/',[HomeController::class,'home'])->name('dashboard');
+Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
+
 });

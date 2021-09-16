@@ -12,6 +12,7 @@ class UserController extends Controller
 {
     public function login()
     {
+        
         return view('backend.layouts.login');
     }
     
@@ -21,9 +22,18 @@ class UserController extends Controller
 
         if(Auth::attempt($credentials))
         {
-            //user logged in
+        // dd(auth()->user());
+            if(auth()->user()->role=='admin' || auth()->user()->role=='manager')
+            {
+                
             return redirect()->route('dashboard');
+            }
         }
+        else
+           {
+               Auth::logout();
+               return redirect()->route('User.signup');
+           }
 
         return redirect()->back()->with('message','invalid user info.');
     }

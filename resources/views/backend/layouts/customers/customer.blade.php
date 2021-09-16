@@ -22,11 +22,11 @@
 
     <tr>
       <th scope="row">{{$customer ->id}}</th>
-      <td>{{$customer ->name}}</td>
+      <td>{{$customer ->full_name}}</td>
       <td>{{$customer->phone_number}}</td>
       <td>{{$customer ->email}}</td>
       <td>{{$customer ->status}}</td>
-      <td>{{$customer ->action}}</td>
+      
       <td scope="row"><a href="#" class="btn btn-primary">View</a>
     
     <a href="#" class="btn btn-warning">Edit</a>

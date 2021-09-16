@@ -92,7 +92,7 @@
 
                     <div class="form-group">
                         <label for="price">price</label>
-                        <textarea id="price" class="form-control" name="price"
+                        <input type="number" min="0" id="price" class="form-control" name="price"
                             placeholder="Enter product price" style="background-color: white"></textarea>
                     </div>
 

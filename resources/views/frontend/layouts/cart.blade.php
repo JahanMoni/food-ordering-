@@ -38,7 +38,7 @@ body {
     <br> </br>
     <br> </br>
     
-<div class="d-flex justify-content-center"><h3><b> Order Here</b></h3></div>
+<div class="d-flex justify-content-center"><h3><b> Information about your order</b></h3></div>
 <div class="card-body">
 @if(session()->has('confirm'))
     <div class="alert alert-success">
@@ -55,48 +55,34 @@ body {
                     </div>
                 @endif
 <div class="form-group">
-<label for="full_name" class="cols-sm-2 control-label">Full Name</label>
+<label for="item_name" class="cols-sm-2 control-label">Item Name</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name" />
+<input required type="text" class="form-control" name="item_name" id="item_name" placeholder="Enter your item Name" />
 </div>
 </div>
 </div>
 
 <div class="form-group">
- <label for="phone_number" class="cols-sm-2 control-label">Phone Number</label>
+ <label for="price" class="cols-sm-2 control-label">Price</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="number" class="form-control" name="phone_number" id="name" placeholder="Enter your Phone Number">
+<input required type="text" class="form-control" name="price" id="price" placeholder="Enter your total amount">
 </div>
 </div>
 </div>
 <div class="form-group">
- <label for="address" class="cols-sm-2 control-label"> Address</label>
+ <label for="quantity" class="cols-sm-2 control-label"> quantity</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="text" class="form-control" name=" address" id="name" placeholder="Enter your Name">
+<input required type="text" class="form-control" name=" quantity" id="quantity" placeholder="Enter your quantity">
 </div>
 </div>
 </div>
 
 
-<div class="form-group">
-<label for="email" class="cols-sm-2 control-label">Email</label>
-<div class="cols-sm-10">
-<div class="input-group">
-<input required type="email" class="form-control" name="email" id="email" placeholder="Enter your Email" />
-</div>
-</div>
-</div>
- <div class="form-group">
-<label for="password" class="cols-sm-2 control-label">Password</label>
-<div class="cols-sm-10">
-<div class="input-group">
-<input required type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
-</div>
-</div>
-</div>
+
+ 
 <div class="form-group">
 
 <div class="form-group ">

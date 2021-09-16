@@ -1,6 +1,7 @@
 <div class="sb-sidenav-menu">
+
                             <div class="nav">
-                            
+                            @if(auth()->user()->role=='admin')
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 {{auth()->user()->full_name}}
@@ -58,9 +59,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                Customer
                             </a>
-                            <a class="nav-link" href="{{route('employees.employee')}}">
+                            <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                               Employee
+                              Manager
                             </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
@@ -72,6 +73,10 @@
                                 offer 
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
+
+                        
+
+
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
@@ -98,7 +103,24 @@
                                     </div>
                                 </nav>
                             </div>
-                           
-                            
+                        
+                            @endif
+            @if(auth()->user()->role=='manager')
+            <a class="nav-link" href="#">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                {{auth()->user()->full_name}}
+                                
+                            </a>
+
+            <a class="nav-link" href="{{route('orders.order')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Order
+                            </a>
+                            <a class="nav-link" href="{{route('items.item')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Item
+                            </a>
+                            @endif 
                         </div>
                     </div>
+                    
