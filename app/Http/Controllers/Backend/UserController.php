@@ -46,6 +46,7 @@ class UserController extends Controller
     
     public function customer()
     {
+        
         $customers=user::where('role','=','customer')->get();
         return view('backend.layouts.customers.customer',compact('customers'));
     }

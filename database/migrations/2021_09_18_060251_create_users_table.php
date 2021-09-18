@@ -22,9 +22,11 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->string('address');
-            $table->varchar('status');
+            $table->string('status',10)->default('active');
             $table->rememberToken();
             $table->timestamps();
+
+
         });
     }
 
@@ -38,6 +40,3 @@ class CreateUsersTable extends Migration
         Schema::dropIfExists('users');
     }
 }
-
-
-

@@ -88,12 +88,12 @@ Route::post('/registration/store',[Registrationcontroller::class,'store'])->name
 Route::get('/employee',[Employeecontroller::class,'employee'])->name('employees.employee');
 });
 
-Route::group(['prefix'=>'manager','middleware'=>'manager'],function ()
-{
+// Route::group(['prefix'=>'manager','middleware'=>'manager'],function ()
+// {
 
-Route::get('/item',[ItemController::class,'item'])->name('items.item');
-Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
-});
+// Route::get('/item',[ItemController::class,'item'])->name('items.item');
+//  Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
+// });
 Route::get('/',[HomeController::class,'home'])->name('dashboard');
 Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
 
