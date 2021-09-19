@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\customer;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\user;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -53,6 +53,11 @@ class UserController extends Controller
     public function userList()
     {
         $user=User::paginate(3);
-        return view('backend.layouts.user', compact('user'));
+        return view('backend.layouts.user.list', compact('user'));
+    }
+    public function viewuser($id)
+    {
+        $users=user::find($id);
+        return view('backend.layouts.user.viewuser',compact('users'));
     }
 }

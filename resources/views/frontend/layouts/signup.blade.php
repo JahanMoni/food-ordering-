@@ -29,7 +29,7 @@ body {
 </style>
 
 
-<form action="{{route('user.signup.store')}}" type="form" method="post">
+<form action="{{route('user.signup.store')}}" type="form" method="post" enctype="multipart/formdata">
 @csrf
 <div class="container">
 <div class="row justify-content-center">
@@ -59,6 +59,17 @@ body {
 <div class="cols-sm-10">
 <div class="input-group">
 <input required type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name" />
+</div>
+</div>
+</div>
+
+
+
+<div class="form-group">
+<label for="full_name" class="cols-sm-2 control-label">image</label>
+<div class="cols-sm-10">
+<div class="input-group">
+<input type="file" class="form-control" name='images' >
 </div>
 </div>
 </div>

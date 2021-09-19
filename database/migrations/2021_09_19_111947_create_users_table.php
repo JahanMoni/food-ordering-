@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('full_name',30);
             $table->string('role')->default();
+            $table->string('images')->default();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
@@ -25,8 +26,6 @@ class CreateUsersTable extends Migration
             $table->string('status',10)->default('active');
             $table->rememberToken();
             $table->timestamps();
-
-
         });
     }
 

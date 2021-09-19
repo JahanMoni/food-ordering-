@@ -77,6 +77,7 @@ Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaura
 
 Route::get('/customers',[BackendUser::class,'customer'])->name('customers.customer');
 Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
+Route::get('/user/view/{id}',[BackendUser::class,'viewuser'])->name('user.viewuser');
 
 
 

@@ -21,7 +21,8 @@ class UsersTableSeeder extends Seeder
                'email'=>'admin@gmail.com',
                'password'=>bcrypt('123456'),
                'address'=>'uttara',
-               'phone_number'=>'01616626263'
+               'phone_number'=>'01616626263',
+               'images'=>'',
            ]
        );
 

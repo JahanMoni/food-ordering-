@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\user;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -16,6 +16,16 @@ class UserController extends Controller
 
         public function signupFormPost(Request $request)
         {
+            
+           
+            $fileName='';
+        if($request->hasFile('image'))
+        {
+           $file=$request->file('image');
+           $fileName=date('Ymdms').'.'.$file->getClientOriginalExtension();
+           $file->storeAs('/uploads',$fileName);
+        
+        }
 
           
            $request->validate([
@@ -31,6 +41,7 @@ class UserController extends Controller
             User::create([
                'full_name'=>$request->full_name,
                'phone_number'=>$request->phone_number,
+               'images' =>$fileName,
                'email'=>$request->email,
                'address'=>$request->address,
                'action'=>$request->action,
@@ -38,12 +49,15 @@ class UserController extends Controller
                'role'=>'customer',
                'password'=>bcrypt($request->password),
             ]);
-    
+    dd($request);
             return redirect()->back()->with('success','User Registration Successfully.');
             
     
 
         }
+
+
+
         public function login()
         {
             return view('frontend.layouts.login');
