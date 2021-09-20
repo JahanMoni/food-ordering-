@@ -33,7 +33,12 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/category/item/{id}',[FrontendHome::class,'categoryitem'])->name('categorywise');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
  Route::get('/search',[UserItemController::class,'search'])->name('search');
+
+
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
+ Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
+
+
  Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
  Route::get('/signup',[UserController::class,'signup'])->name('User.signup');
  Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');

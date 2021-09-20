@@ -41,7 +41,7 @@ class UserController extends Controller
             User::create([
                'full_name'=>$request->full_name,
                'phone_number'=>$request->phone_number,
-               'images' =>$fileName,
+               'image' =>$fileName,
                'email'=>$request->email,
                'address'=>$request->address,
                'action'=>$request->action,
@@ -49,7 +49,7 @@ class UserController extends Controller
                'role'=>'customer',
                'password'=>bcrypt($request->password),
             ]);
-    dd($request);
+    // dd($request);
             return redirect()->back()->with('success','User Registration Successfully.');
             
     

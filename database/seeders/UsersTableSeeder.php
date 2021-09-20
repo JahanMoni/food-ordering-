@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
                'password'=>bcrypt('123456'),
                'address'=>'uttara',
                'phone_number'=>'01616626263',
-               'images'=>'',
+               'image'=>'',
            ]
        );
 

@@ -28,8 +28,7 @@ body {
 </style>
 
 
-<form action="{{route('user.signup.store')}}" type="form" method="post">
-@csrf
+
 <div class="container">
 <div class="row justify-content-center">
 <div class="col-md-8">
@@ -54,51 +53,77 @@ body {
                         </ul>
                     </div>
                 @endif
-<div class="form-group">
-<label for="item_name" class="cols-sm-2 control-label">Item Name</label>
-<div class="cols-sm-10">
-<div class="input-group">
-<input required type="text" class="form-control" name="item_name" id="item_name" placeholder="Enter your item Name" />
-</div>
-</div>
-</div>
 
-<div class="form-group">
- <label for="price" class="cols-sm-2 control-label">Price</label>
-<div class="cols-sm-10">
-<div class="input-group">
-<input required type="text" class="form-control" name="price" id="price" placeholder="Enter your total amount">
-</div>
-</div>
-</div>
-<div class="form-group">
- <label for="quantity" class="cols-sm-2 control-label"> quantity</label>
-<div class="cols-sm-10">
-<div class="input-group">
-<input required type="text" class="form-control" name=" quantity" id="quantity" placeholder="Enter your quantity">
-</div>
-</div>
-</div>
+                <div class="table-responsive cart_info">
+<table class="table table-condensed">
+<thead>
+<tr class="cart_menu">
+<td class="image">Item</td>
+<td class="description"></td>
+<td class="price">Price</td>
+<td class="quantity">Quantity</td>
+<td class="total">Total</td>
 
+<td></td>
+</tr>
+</thead>
+<tbody>
+
+@foreach($carts as $key=>$cart)
+
+<tr>
+<td class="cart_product">
+<a href=""><img src="images/cart/one.png" alt=""></a>
+</td>
+<td class="cart_description">
+<h4><a href="">{{$cart['name']}}</a></h4>
 
 
- 
-<div class="form-group">
 
-<div class="form-group ">
-<button type="submit" class="btn btn-success btn-lg btn-block login-button" href="# " >Order Now</button>
-<br> </br>
-<a href=" " target="_blank" >Forgot Password?</a>
+</td>
+<td class="cart_price">
+<p>{{$cart['price']}}</p>
+</td>
 
 
-</form>
-</div>
+
+
+    <td class="cart_quantity">
+        <span class="cart_quantity_button">
+            <input style="width: 40px" class="cart_quantity_input" type="hidden" name="id" value="#" autocomplete="off" >
+        <input style="width: 40px" class="cart_quantity_input" type="number" name="quantity" value="{{$cart['quantity']}}" autocomplete="off" >
+        <button type="submit" class="btn btn-primary">edit</button>
+        </span>
+        <span class="text-center">
+            <a href="delete" class="btn btn-primary"> Delete</a>
+            </span>
+</td>
+
+
+
+
+<td class="cart_total">
+<p class="cart_total_price">{{$cart['total_price']}}</p>
+</td>
+
+@endforeach
+
+
+
+</tbody>
+
+
+</table>
+<a class="btn btn-success" style="float:right" href="#">Check Out</a>
+<a class="btn btn-success" style="float:right" href="#">clear</a>
 
 </div>
-</div>
-</div>
+
+
+
 
 </div>
-</body>
+
+</section> <!--/#cart_items-->
 
 @endsection

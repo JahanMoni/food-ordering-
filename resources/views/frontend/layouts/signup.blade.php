@@ -29,7 +29,7 @@ body {
 </style>
 
 
-<form action="{{route('user.signup.store')}}" type="form" method="post" enctype="multipart/formdata">
+<form action="{{route('user.signup.store')}}" type="form" method="POST"enctype="multipart/form-data">
 @csrf
 <div class="container">
 <div class="row justify-content-center">
@@ -66,7 +66,7 @@ body {
 
 
 <div class="form-group">
-<label for="full_name" class="cols-sm-2 control-label">image</label>
+<label for="images" class="cols-sm-2 control-label">image</label>
 <div class="cols-sm-10">
 <div class="input-group">
 <input type="file" class="form-control" name='images' >

@@ -5,7 +5,8 @@
 
 <style type="text/css">
 body{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+   
+    background-image:url('https://images.unsplash.com/photo-1515669097368-22e68427d265?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjA5fHxmb29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
 }
 .emp-profile{
     padding: 3%;
@@ -112,7 +113,7 @@ body{
                     <div class="col-md-4">
                         <div class="profile-img">
                             <br> </br>
-                            <img src="{{url('/uploads/'.$users->images)}}" alt=""/>
+                            <img src="{{url('/uploads/'.$users->images)}}" alt="users image">
                             <!-- <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
@@ -125,23 +126,16 @@ body{
                         <br> </br>
                         <br> </br>
                                     <h5>
-                                        {{$users->full_name}}
+                                       Users Name- {{$users->full_name}}
                                     </h5>
                                     
                                     <!-- <p class="proile-rating">RANKINGS : <span>8/10</span></p> -->
                                     <br> </br>
                                    
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
-                                </li>
-                                
-                            </ul>
+                            
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
-                    </div>
+                    
                 </div>
                 
       <div class="col-md-8">
@@ -155,7 +149,7 @@ body{
                                             </div>
                                             <div class="col-md-6">
                                             <br> </br>
-                                                <p> {{$users->customer_id}}</p>
+                                                <p> {{$users->id}}</p>
                                             </div>
                                         </div>
                                         <div class="row">

@@ -243,6 +243,14 @@ label.radio input:checked+span::before {
 </style>
 
 
+@if(session('success'))
+        <div class="alert alert-success">
+            {!! session('success') !!}
+        </div>
+@endif
+
+
+
 <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 <div class="container-fluid mt-2 mb-3">
     <div class="row no-gutters">
@@ -295,7 +303,10 @@ label.radio input:checked+span::before {
                 </div>
                 <br> </br>
                 <br> </br>
-                <div class="buttons"> <button class="btn btn-outline-warning btn-long cart">Add to Cart</button>
+                <div class="buttons"> 
+                    <a href="{{route('addTocart',$items->id)}}" class="btn btn-outline-warning btn-long cart">
+                        Add to Cart
+                    </a>
                  <button class="btn btn-warning btn-long buy">Buy it Now</button> </div>
                 <hr>
                 <div>
@@ -325,14 +336,7 @@ label.radio input:checked+span::before {
                 </div>
             </div>
            
-            <div class="card mt-2"> <span>Similar items:</span>
-            @foreach($categories as $category)
-                <div class="similar-products mt-2 d-flex flex-row">
-                    <div class="card border p-1" style="width: 9rem;margin-right: 3px;"> <img src="{{url('uploads/'.$category->image)}}}" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h6 class="card-title">Price-{{$category->price}}.BDT</h6>
-                        </div>
-                    </div>
+            
                     
                    
                    
@@ -342,7 +346,7 @@ label.radio input:checked+span::before {
         </div>
     </div>
 </div>
-@endforeach
+
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
 <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
 <script>
