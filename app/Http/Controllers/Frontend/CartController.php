@@ -79,5 +79,13 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
     
+    public function checkoutshow()
+    {
+
+        $carts = session()->get('cart'); 
+
+         return view ('frontend.layouts.checkout',compact('carts'));
+     }
+    
     
 }

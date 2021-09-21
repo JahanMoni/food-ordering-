@@ -114,7 +114,7 @@ body {
 
 
 </table>
-<a class="btn btn-success" style="float:right" href="#">Check Out</a>
+<a class="btn btn-success" style="float:right" href="{{route('checkout')}}">Check Out</a>
 <a class="btn btn-success" style="float:right" href="#">clear</a>
 
 </div>

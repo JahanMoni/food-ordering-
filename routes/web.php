@@ -37,7 +37,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
-
+ Route::get('/checkout',[CartController::class,'checkoutshow'])->name('checkout');
 
  Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
  Route::get('/signup',[UserController::class,'signup'])->name('User.signup');

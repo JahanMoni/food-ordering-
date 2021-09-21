@@ -19,6 +19,7 @@ class UserItemController extends Controller
         
         $categories=Category::all();
         $items=item::find($id);
+    
         return view('frontend.layouts.itemview',compact('items','categories'));
     }
     public function search()
