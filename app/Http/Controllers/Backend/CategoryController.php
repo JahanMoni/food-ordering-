@@ -56,6 +56,37 @@ public function  delete($id)
     
             return view('backend.layouts.categories.category-item',compact('items'));
         }
+        public function edit($id)
+        {
+            $categories=category::find($id);
+            return view('backend.layouts.categories.edit',compact('categories'));
+
+        }
+        public function update(Request $request,$id)
+        {
+            {
+                $fileName='';
+            if($request->hasFile('image'))
+            {
+               $file=$request->file('image');
+               $fileName=date('Ymdms').'.'.$file->getClientOriginalExtension();
+               $file->storeAs('/uploads',$fileName);
+    
+            
+            
+            }
+            $categories=Category::find($id);
+            $categories->updates([
+                'name' =>$request->Category_name,
+                'details' =>$request->description,
+                'image' =>$fileName
+            ]); 
+
+            return redirect()->route('categories.category')->with('message','item updated successfully.');
+
+        }
+        
+    }
         
     
 }

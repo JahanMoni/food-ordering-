@@ -31,7 +31,7 @@ class CartController extends Controller
         $cart = session()->get('cart');
     
 
-        // if cart is empty then this the first product
+        // if cart is empty then this the first item
         if(!$cart) {
 
             $cart = [

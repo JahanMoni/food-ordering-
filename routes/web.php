@@ -61,7 +61,8 @@ Route::get('/category',[CategoryController::class,'category'])->name('categories
 Route::post('/category/store',[CategoryController::class,'store'])->name('categories.store');
 Route::get('/category/delete/{id}',[CategoryController::class,'delete'])->name('categories.delete');
 Route::get('/category/{id}/item',[CategoryController::class,'allitem'])->name('category.item');
-
+Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('categories.edit');
+Route::put('/category/update/{id}',[CategoryController::class,'update'])->name('categories.update');
 
 Route::get('/item',[ItemController::class,'item'])->name('items.item');
 Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
@@ -70,7 +71,7 @@ Route::get('/item/delete/{id}',[ItemController::class,'delete'])->name('items.de
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
-
+Route::post('/order/store',[OrderController::class,'store'])->name('orders.store');
 
 
 

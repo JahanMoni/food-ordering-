@@ -336,6 +336,16 @@ hr{
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <div class="container wrapper">
             <div class="row cart-head">
                 <div class="container">
@@ -343,9 +353,9 @@ hr{
                     <p></p>
                 </div>
                 <br> </br>
-                <br> </br>
-                
+                    <br> </br>
                 <div class="row">
+                    
                     <div style="display: table; margin: auto;">
                         <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
                         <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
@@ -361,12 +371,12 @@ hr{
                 <form class="form-horizontal" method="post" action="">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
-                    @foreach($carts as $key=>$cart)
                     <div class="panel panel-info">
                         <div class="panel-heading">
                             Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
                         </div>
                         <div class="panel-body">
+                            @foreach($carts as $cart)
                             <div class="form-group">
                                 <div class="col-sm-3 col-xs-3">
                                     <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
@@ -376,75 +386,56 @@ hr{
                                     <div class="col-xs-12"><small>{{$cart['quantity']}}:<span>1</span></small></div>
                                 </div>
                                 <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6>{{$cart['price']}}</h6>
+                                    <h6><span>BDT</span>{{$cart['price']}}</h6>
                                 </div>
                             </div>
-                            
-                            <div class="form-group">
-                               
-                               
-                               
-                            </div>
-                            <div class="form-group"><hr /></div>
-                            <div class="form-group">
+                            @endforeach
+                           <hr>
+                           <div class="form-group">
                                 <div class="col-xs-12">
-                                    <strong>Price</strong>
-                                    <div class="pull-right"><span>{{$cart['price']}}</span></div>
-                                </div>
-                                
-                            </div>
-                            <div class="form-group"><hr /></div>
-                            <div class="form-group">
-                                <div class="col-xs-12">
-                                    <strong>Total Price</strong>
-                                    <div class="pull-right"><span>{{$cart['total_price']}}</span></div>
+                                    <strong> Total Price</strong>
+                                    <div class="pull-right"><span>BDT.</span><span>{{$cart['total_price']}}</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    @endforeach
+                    
                     <!--REVIEW ORDER END-->
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                     <!--SHIPPING METHOD-->
                     <div class="panel panel-info">
-                        <div class="panel-heading">Customer Information</div>
                         <div class="panel-body">
                             <div class="form-group">
+                    <div class="panel-heading">
+
                                 <div class="col-md-12">
-                                    <h4>Checkout form</h4>
+                                <i><h4>Customer Information</h4></i>
                                 </div>
                             </div>
-                           
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Full Name:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="full_name" class="form-control" value="" />
+                                    <input type="text" class="form-control" name="full_name" value="" />
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>phone:</strong></div>
-                                <div class="col-md-12">
-                                    <input type="text" name="phone" class="form-control" value="" />
-                                </div>
-                            </div>
-                                
+                            
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Address:</strong></div>
                                 <div class="col-md-12">
                                     <input type="text" name="address" class="form-control" value="" />
                                 </div>
                             </div>
-                            
-                            
                             <div class="form-group">
-                                <div class="col-md-12"><strong>Price:</strong></div>
+                                <div class="col-md-12"><strong>City:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="price" class="form-control" value="" />
+                                    <input type="text" name="city" class="form-control" value="" />
                                 </div>
                             </div>
+                           
+                           
                             <div class="form-group">
-                                <div class="col-md-12"><strong>Details:</strong></div>
+                                <div class="col-md-12"><strong>Phone Number:</strong></div>
                                 <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
                             </div>
                             <div class="form-group">
@@ -453,18 +444,19 @@ hr{
                             </div>
                         </div>
                     </div>
-                    <!--Customer Informati METHOD END-->
+                    <!--SHIPPING METHOD END-->
                     <!--CREDIT CART PAYMENT-->
-                    <div class="d-block my-3">
-              <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-               <h3> <label class="custom-control-label" for="credit">Cash On Delivery</label></h3>
-              </div>
-             </div>
-                        
+                    
+                            <div class="form-group">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <button type="submit" class="btn btn-success btn-lg btn-block login-button" href=" " >Place Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--CREDIT CART PAYMENT END-->
                 </div>
-               
-                <button class="btn btn-primary btn-lg btn-block"  type="submit">Place Order </button>
+                
                 </form>
             </div>
             <div class="row cart-footer">
