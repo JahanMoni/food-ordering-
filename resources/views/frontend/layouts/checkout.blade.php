@@ -389,6 +389,7 @@ hr{
                                     <h6><span>BDT</span>{{$cart['price']}}</h6>
                                 </div>
                             </div>
+                           
                             @endforeach
                            <hr>
                            <div class="form-group">
@@ -424,12 +425,6 @@ hr{
                                 <div class="col-md-12"><strong>Address:</strong></div>
                                 <div class="col-md-12">
                                     <input type="text" name="address" class="form-control" value="" />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>City:</strong></div>
-                                <div class="col-md-12">
-                                    <input type="text" name="city" class="form-control" value="" />
                                 </div>
                             </div>
                            

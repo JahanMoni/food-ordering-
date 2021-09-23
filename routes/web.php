@@ -6,11 +6,11 @@ use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\Itemcontroller;
 use App\Http\Controllers\Backend\OfferController;
 use App\Http\Controllers\Backend\OrderController;
-
 use App\Http\Controllers\Backend\Registrationcontroller;
 use App\Http\Controllers\Backend\Employeecontroller;
 use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
+use App\Http\Controllers\Frontend\OrderController as FrontendOrder;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\UserItemController;
 use App\Http\Controllers\Frontend\CartController;
@@ -33,6 +33,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/category/item/{id}',[FrontendHome::class,'categoryitem'])->name('categorywise');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
  Route::get('/search',[UserItemController::class,'search'])->name('search');
+ Route::get('/order/{id}',[FrontendOrder::class,'order'])->name('orders');
 
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
