@@ -62,13 +62,13 @@ body {
 <td class="description"></td>
 <td class="price">Price</td>
 <td class="quantity">Quantity</td>
-<td class="total">Total</td>
+<td class="total">Sub Total</td>
 
 <td></td>
 </tr>
 </thead>
 <tbody>
-
+@if($carts)
 @foreach($carts as $key=>$cart)
 
 <tr>
@@ -107,7 +107,7 @@ body {
 </td>
 
 @endforeach
-
+@endif
 
 
 </tbody>

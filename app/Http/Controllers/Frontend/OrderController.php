@@ -10,11 +10,11 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function order($id)
-    {
-        $order=Order::with('customer')
-        $users=User::all();
-        $item=Item::find($id);
-        retuen view('frontend.layouts.order',compact('order','users','item'));
-    }
+    // public function order($id)
+    // {
+    //     $order=Order::with('customer')
+    //     $users=User::all();
+    //     $item=Item::find($id);
+    //     retuen view('frontend.layouts.order',compact('order','users','item'));
+    // }
 }

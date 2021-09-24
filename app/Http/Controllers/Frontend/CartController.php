@@ -86,6 +86,9 @@ class CartController extends Controller
 
          return view ('frontend.layouts.checkout',compact('carts'));
      }
+
+     
+     
     
     
 }

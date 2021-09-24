@@ -24,7 +24,7 @@
                        
 
 						@if(auth()->user())
-						<a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>
+						<a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>    
                         <a class="nav-item nav-link" href="">{{auth()->user()->full_name}}</a>
     
 

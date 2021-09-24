@@ -441,6 +441,15 @@ hr{
                     </div>
                     <!--SHIPPING METHOD END-->
                     <!--CREDIT CART PAYMENT-->
+
+                    <div class><strong>Payment:</strong></div>
+
+            <div class="d-block my-3">
+              <div class="custom-control custom-radio">
+                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" for="credit">Cash On Delivery</label>
+              </div>
+             </div>
                     
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
