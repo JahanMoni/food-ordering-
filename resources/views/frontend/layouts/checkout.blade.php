@@ -368,7 +368,14 @@ hr{
                 </div>
             </div>    
             <div class="row cart-body">
-                <form class="form-horizontal" method="post" action="">
+            @if(session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+                <form class="form-horizontal" method="post" action="{{route('orders.store')}}">
+                  @csrf
+
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">

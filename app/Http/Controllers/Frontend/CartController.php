@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Item;
+use App\Models\order_details;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -86,6 +87,19 @@ class CartController extends Controller
 
          return view ('frontend.layouts.checkout',compact('carts'));
      }
+     public function orderlist(Request $request)
+    {
+       order_details:: Create([
+             'receiver_name '=>$request->full_name,
+            ' receiver_email'=>$request->email_address,
+             'receiver_phone_number'=>$request->phone_number,
+             'receiver_address'=>$request->address,
+
+
+
+       ]);
+       return redirect()->back()->with('success','order successfully.');
+    }
 
      
      

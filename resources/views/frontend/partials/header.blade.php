@@ -20,7 +20,7 @@
                         </form>
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('cart')}}">Cart({{count(session()->get('cart'))}})</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
                        
 
 						@if(auth()->user())

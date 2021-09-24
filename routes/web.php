@@ -34,12 +34,13 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
  Route::get('/search',[UserItemController::class,'search'])->name('search');
  Route::get('/order/{id}',[FrontendOrder::class,'order'])->name('orders');
+ 
 
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
  Route::get('/checkout',[CartController::class,'checkoutshow'])->name('checkout');
- 
+ Route::post('/order/store',[CartController::class,'orderlist'])->name('orders.store');
 
 
  Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
@@ -74,7 +75,7 @@ Route::get('/item/delete/{id}',[ItemController::class,'delete'])->name('items.de
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
-Route::post('/order/store',[OrderController::class,'store'])->name('orders.store');
+// Route::post('/order/store',[OrderController::class,'store'])->name('orders.store');
 
 
 
