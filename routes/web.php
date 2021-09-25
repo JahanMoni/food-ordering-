@@ -40,6 +40,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
  Route::get('/checkout',[CartController::class,'checkoutshow'])->name('checkout');
+ Route::get('/cart/clear',[CartController::class,'clear'])->name('clear');
  Route::post('/order/store',[CartController::class,'orderlist'])->name('orders.store');
 
 

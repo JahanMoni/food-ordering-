@@ -18,6 +18,12 @@ class CartController extends Controller
     
         return view('frontend.layouts.cart',compact('carts'));
      }
+     public function clear()
+    {
+        session()->forget('cart');
+        return redirect()->back();
+    }
+    
 
 
    
@@ -50,7 +56,7 @@ class CartController extends Controller
             ];
 
             session()->put('cart', $cart);
-            dd($cart);
+            // dd($cart);
 
             return redirect()->back()->with('success', 'item added to cart successfully!');
         }

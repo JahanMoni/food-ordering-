@@ -95,7 +95,7 @@ body {
         <button type="submit" class="btn btn-primary">edit</button>
         </span>
         <span class="text-center">
-            <a href="delete" class="btn btn-primary"> Delete</a>
+            <a href="#"  class="btn btn-primary"> Delete</a>
             </span>
 </td>
 
@@ -115,7 +115,7 @@ body {
 
 </table>
 <a class="btn btn-success" style="float:right" href="{{route('checkout')}}">Check Out</a>
-<a class="btn btn-success" style="float:right" href="#">clear</a>
+<a class="btn btn-success" style="float:right" href="{{route('clear')}}">clear</a>
 
 </div>
 
