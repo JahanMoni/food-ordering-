@@ -373,8 +373,7 @@ hr{
         {{ session()->get('success') }}
     </div>
 @endif
-                <form class="form-horizontal" method="post" action="{{route('orders.store')}}">
-                  @csrf
+               
 
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
@@ -383,28 +382,14 @@ hr{
                             Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
                         </div>
                         <div class="panel-body">
-                            @foreach($carts as $cart)
-                            <div class="form-group">
-                                <div class="col-sm-3 col-xs-3">
-                                    <img class="img-responsive" src="//c1.staticflickr.com/1/466/19681864394_c332ae87df_t.jpg" />
-                                </div>
-                                <div class="col-sm-6 col-xs-6">
-                                    <div class="col-xs-12">{{$cart['name']}}</div>
-                                    <div class="col-xs-12"><small>{{$cart['quantity']}}:<span>1</span></small></div>
-                                </div>
-                                <div class="col-sm-3 col-xs-3 text-right">
-                                    <h6><span>BDT</span>{{$cart['price']}}</h6>
-                                </div>
-                            </div>
-                           
-                            @endforeach
+                        <ul style="font-weight: bold; font-size: 25px; ">
+							<li>Cart Sub Total <span>{{$total}}</span></li>
+							<li>Delivery Charge <span>BDT 60</span></li>
+							<li >Total <span>{{$total+60}}</span></li>
+						</ul>
+                            
                            <hr>
-                           <div class="form-group">
-                                <div class="col-xs-12">
-                                    <strong> Total Price</strong>
-                                    <div class="pull-right"><span>BDT.</span><span>{{$cart['total_price']}}</span></div>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                     
@@ -412,8 +397,12 @@ hr{
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6">
                     <!--SHIPPING METHOD-->
+                    <form class="form-horizontal" method="post" action="{{route('orders.store')}}">
+                  @csrf
                     <div class="panel panel-info">
+
                         <div class="panel-body">
+                        
                             <div class="form-group">
                     <div class="panel-heading">
 
@@ -446,6 +435,7 @@ hr{
                             </div>
                         </div>
                     </div>
+                      
                     <!--SHIPPING METHOD END-->
                     <!--CREDIT CART PAYMENT-->
 
@@ -457,6 +447,7 @@ hr{
                 <label class="custom-control-label" for="credit">Cash On Delivery</label>
               </div>
              </div>
+             
                     
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -464,14 +455,16 @@ hr{
                                 </div>
                             </div>
                         </div>
+                    </form>
                     </div>
                     <!--CREDIT CART PAYMENT END-->
                 </div>
-                
-                </form>
+               
+              
             </div>
             <div class="row cart-footer">
         
             </div>
+           
     </div>
     @endsection
