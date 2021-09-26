@@ -24,8 +24,17 @@
                        
 
 						@if(auth()->user())
-						<a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>    
-                        <a class="nav-item nav-link" href="">{{auth()->user()->full_name}}</a>
+						<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  {{auth()->user()->full_name}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <a class="dropdown-item" href="{{route('myprofile')}}">My Profile</a>
+    <a class="dropdown-item" href="{{route('MyOrderDetails')}}">My Order Details</a>
+    <a class="dropdown-item" href="{{route('user.logout')}}">Logout</a>
+  
+  </div>
+</div>
     
 
     @else

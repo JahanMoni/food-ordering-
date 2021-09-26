@@ -17,7 +17,7 @@ class CreateOrderDetailsTable extends Migration
             $table->id();
            
             $table->integer('order_id');
-            $table->integer('item_id');
+            $table->string('item_name');
             $table->double('unit_price',10,2)->default(0.00);
             $table->double('sub_total',10,2)->default(0.00);
             $table->integer('quantity');

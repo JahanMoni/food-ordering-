@@ -1,6 +1,9 @@
 @extends('backend.master')
            @section('content')
            <h1>Order List</h1>
+           @if(session()->has('message'))
+                            <span class="alert alert-danger">{{session()->get('message')}}</span>
+                    @endif
 
            <table class="table table-striped">
   <thead>
@@ -28,11 +31,22 @@
       <td>{{$order->receiver_phone_number}}</td>
       <td>{{$order->receiver_address}}</td>
       <td>{{$order->status}}</td>
-      <td scope="row"><a href="#" class="btn btn-primary">View</a>
-    
-            
-                <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
-            </td>
+      <td scope="row"><a href="{{route('orders.details',$order->id})}" class="btn btn-primary">View</a>
+      <a class="btn btn-success" href="{{route('orders.invoice',$order->id)}}">Invoice</a>
+      <td scope="row">
+       
+        <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Confirmation   
+  </a>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="{{route('orders.approve',[$order->id,'status'=>'approved'])}}">Approve</a>
+    <a class="dropdown-item" href="{{route('orders.approve',[$order->id,'status'=>'cancelled'])}}">Cancel</a>
+   
+  </div>
+</div>
+      </td>
 
       
       

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Item;
 use App\Models\order;
+use App\Models\order_details;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -100,8 +101,9 @@ class CartController extends Controller
      public function orderlist(Request $request)
     {
         $carts = session('cart');
+
     
-       order:: Create([
+       $order=order:: Create([
         
              'user_id'=>auth()->user()->id,
              'receiver_name'=>$request->full_name,
@@ -112,6 +114,19 @@ class CartController extends Controller
             
 
        ]);
+
+       foreach ($carts as $item)
+       {
+               order_details::create([
+            
+               'order_id'=>$order->id,
+               'item_name'=>$item['name'],
+               'unit_price'=>$item['price'],
+               'quantity'=>$item['quantity'],
+               'sub_total'=>$item['price'] * $item['quantity'],
+           ]);
+           
+       }
        return redirect()->back()->with('success','order successfully.');
     }
 

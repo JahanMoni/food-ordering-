@@ -23,7 +23,7 @@ class CreateOrdersTable extends Migration
             $table->string('receiver_email',100);
             $table->string('receiver_phone_number');
             $table->string('receiver_address');
-             $table->string('status',10)->default('active');
+             $table->string('status',10)->default('Pending');
             $table->timestamps();
         });
     }

@@ -11,9 +11,12 @@ use App\Http\Controllers\Backend\Employeecontroller;
 use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Frontend\OrderController as FrontendOrder;
+use App\Http\Controllers\Frontend\OrderDetailsController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\UserItemController;
-use App\Http\Controllers\Frontend\CartController;
+
+use App\Http\Controllers\Frontend\MyProfileController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,8 +37,9 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/itemview/{id}',[UserItemController::class,'itemview'])->name('itemview');
  Route::get('/search',[UserItemController::class,'search'])->name('search');
  Route::get('/order/{id}',[FrontendOrder::class,'order'])->name('orders');
- 
-
+ Route::get('/orderDetails',[OrderDetailsController::class,'MyOrderDetails'])->name('MyOrderDetails');
+ Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
+ Route::get('/myprofile/Cencel/{id}',[MyProfileController::class,'Cencel'])->name('Cencel');
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
@@ -76,6 +80,9 @@ Route::get('/item/delete/{id}',[ItemController::class,'delete'])->name('items.de
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
+Route::get('/order/invoice/{id}',[OrderController::class,'invoice'])->name('orders.invoice');
+Route::get('/order/Approve/{id}/{status}',[OrderController::class,'approve'])->name('orders.approve');
+Route::get('/order/{id}',[OrderController::class,'orderdetails'])->name('orders.details');
 // Route::post('/order/store',[OrderController::class,'store'])->name('orders.store');
 
 
