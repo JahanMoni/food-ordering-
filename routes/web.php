@@ -13,6 +13,7 @@ use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Frontend\OrderController as FrontendOrder;
 use App\Http\Controllers\Frontend\OrderDetailsController;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\UserItemController;
 
 use App\Http\Controllers\Frontend\MyProfileController;
@@ -39,7 +40,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/order/{id}',[FrontendOrder::class,'order'])->name('orders');
  Route::get('/orderDetails',[OrderDetailsController::class,'MyOrderDetails'])->name('MyOrderDetails');
  Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
- Route::get('/myprofile/Cencel/{id}',[MyProfileController::class,'Cencel'])->name('Cencel');
+ Route::get('/myprofile/Cencel/{id}',[MyProfileController::class,'Cancel'])->name('Cancel');
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');

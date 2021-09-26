@@ -31,7 +31,7 @@
       <td>{{$order->receiver_phone_number}}</td>
       <td>{{$order->receiver_address}}</td>
       <td>{{$order->status}}</td>
-      <td scope="row"><a href="{{route('orders.details',$order->id})}" class="btn btn-primary">View</a>
+      <td scope="row"><a href="{{route('orders.details',$order->id)}}" class="btn btn-primary">View</a>
       <a class="btn btn-success" href="{{route('orders.invoice',$order->id)}}">Invoice</a>
       <td scope="row">
        

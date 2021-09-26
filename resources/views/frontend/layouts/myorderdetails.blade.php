@@ -14,6 +14,7 @@
                     <tr>
                         <th scope="col">serial</th>
                         <th scope="col"> Order Id</th>
+                        <th scope="col"> user Id</th>
                         <th scope="col"> Item name</th>
                         <th scope="col"> Quantity</th>
                         <th scope="col"> Price</th>
@@ -23,11 +24,13 @@
                     </tr>
                     </thead>
                     <tbody>
+                        
                        @foreach ( $orders as $key=>$date )
                        <tr>
 
                            <th scope="row">{{$key+1}}</th>
-                           <td>{{$date ->order_id}}</td>
+                           <td>{{$date->order_id}}</td>
+                           <td>{{$date->user_id}}</td>
                            <td>{{$date ->item_name}}</td>
                            <td>{{$date ->quantity}}</td>
                            <td>{{$date ->unit_price}}</td>
@@ -36,6 +39,7 @@
                        </tr>
 
                        @endforeach
+                       
 
                     </tbody>
 

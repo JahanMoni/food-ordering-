@@ -118,7 +118,7 @@ class CartController extends Controller
        foreach ($carts as $item)
        {
                order_details::create([
-            
+                'user_id'=>auth()->user()->id,
                'order_id'=>$order->id,
                'item_name'=>$item['name'],
                'unit_price'=>$item['price'],

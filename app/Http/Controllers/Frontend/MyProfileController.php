@@ -13,14 +13,14 @@ class MyProfileController extends Controller
     public function myprofile() 
     {
         $orders=order_details::all();
-        $orders=order::all();
+        $orders=order::where('user_id',auth()->user()->id)->get();
         $users=User::all();
         return view('frontend.layouts.myprofile',compact('orders','users'));
 
     }
     
     
-         public function  cancel($id)
+         public function Cancel($id)
         {
             order::find($id)->update([
         'status'=>'cancel'

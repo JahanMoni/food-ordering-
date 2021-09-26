@@ -77,7 +77,7 @@
                                 <th scope="col">  Name</th>
                                 <th scope="col"> Email</th>
                                 <th scope="col"> Mobile</th>
-                                <th scope="col"> Adress</th>
+                                <th scope="col"> Address</th>
                                 <th scope="col"> Status</th>
                                
 
@@ -97,9 +97,11 @@
                                      <td>{{$order->receiver_phone_number}}</td>
                                     <td>{{$order->receiver_address}}</td>
                                      <td>{{$order->status}}</td>
-                                     <td scope="row"><a href="#" class="btn btn-primary">View</a>
-                                     <td scope="row"><a href="{{route('cencel',$myprofile->id})}" class="btn btn-primary">Cencel</a>
-
+                                    <td>
+                                     @if(!($order->status == 'cancelled'))
+                                        <a class="btn btn-danger" href="{{ route('Cancel',$order->id) }}">Cancel</a>
+                                    @endif
+</td>
                                
                             </tr>
                 @endforeach

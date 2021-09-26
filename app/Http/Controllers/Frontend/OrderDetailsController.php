@@ -11,10 +11,11 @@ class OrderDetailsController extends Controller
 {
     public function MyOrderDetails()
     {
-        $orders=order_details::all();
+        $orders=order_details::where('user_id',auth()->user()->id)->get();
         return view('frontend.layouts.myorderdetails',compact('orders'));
         
     }
+    
 
   
 }
