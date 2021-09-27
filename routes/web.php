@@ -80,6 +80,10 @@ Route::get('/item/delete/{id}',[ItemController::class,'delete'])->name('items.de
 
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
+Route::post('/offer/store',[OfferController::class,'store'])->name('offers..store');
+
+
+
 Route::get('/order',[OrderController::class,'order'])->name('orders.order');
 Route::get('/order/invoice/{id}',[OrderController::class,'invoice'])->name('orders.invoice');
 Route::get('/order/Approve/{id}/{status}',[OrderController::class,'approve'])->name('orders.approve');

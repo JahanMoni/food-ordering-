@@ -15,8 +15,9 @@ class CreateOffersTable extends Migration
     {
         Schema::create('offers', function (Blueprint $table) {
             $table->id();
-            $table->string('itemname',100);
-            $table->text('details')->nullable();
+            $table->integer('user_id');
+            $table->string('item_name');
+            $table->string('expire_date');
             $table->string('status',10)->default('active');
             $table->timestamps();
         });

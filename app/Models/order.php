@@ -20,4 +20,9 @@ class order extends Model
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
+    public function item()
+    {
+        return $this->belongsTo(Item::class,'item_id','id');
+    }
+
 }
