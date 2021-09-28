@@ -13,6 +13,8 @@
       <th scope="col">ID</th>
       <th scope="col">User ID</th>
       <th scope="col">Item Name</th>
+      <th scope="col">Image</th>
+      <th scope="col">Price</th>
       <th scope="col">Expire Date</th>
       <th scope="col">Status</th>
       
@@ -26,6 +28,10 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$offers->user_id}}</td>
+      <td>{{$offers->item_name}}</td>
+      <td>
+                <img src="{{url('/uploads/'.$offers->image)}}" width="100px" alt="offer image">
+            </td>
       <td>{{$offers->item_name}}</td>
       <td>{{$offers->expire_date}}</td>
       <td>{{$offers->status}}</td>
@@ -42,7 +48,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
 
-           <form action="{{route('offers..store')}}" method="POST">
+           <form action="{{route('offers..store')}}" method="POST"enctype="multipart/form-data">
 
                 @csrf
                 
@@ -59,6 +65,18 @@
                         <label for="description">Item Name</label>
                         <input type="text" class="form-control" name="Item_name" placeholder="Enter Item name"
                             style="background-color: white">
+                    </div>
+                    <div class="form-group">
+                           <label for="exampleFormControlFile1">Image</label>
+                            <div class="custom-file">
+                                 <input type="file" class="form-control" name='image' >
+   
+                               </div>
+
+                               <div class="form-group">
+                        <label for="price">price</label>
+                        <input type="number" min="0" id="price" class="form-control" name="price"
+                            placeholder="Enter product price" style="background-color: white"></textarea>
                     </div>
 
                     

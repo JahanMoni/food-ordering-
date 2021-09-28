@@ -93,8 +93,8 @@
 		</div>
 	</div>
 	<div class="text-center">
-  <a class="btn btn-success btn-lg" href="#" role="button">View All items</i></a>
-	</div>
+  <a class="btn btn-success btn-lg" href="{{route('items')}}" role="button">View All items</i></a>
+  </div>
 
 	
 	<!-- End Menu -->
@@ -104,55 +104,45 @@
 
 
 	<!-- Start Gallery -->
+	
 	<div class="gallery-box">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-12">
+					<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Gallery</h2>
+						<h2>Offer Item</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
-			<div class="tz-gallery">
-				<div class="row">
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-01.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-01.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-02.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-02.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-03.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-03.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-12 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-04.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-04.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-05.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-05.jpg')}}" alt="Gallery Images">
-						</a>
-					</div> 
-					<div class="col-sm-6 col-md-4 col-lg-4">
-						<a class="lightbox" href="{{url('/frontend/images/gallery-img-06.jpg')}}">
-							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-06.jpg')}}" alt="Gallery Images">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="text-center">
-  <a class="btn btn-success btn-lg" href="{{route('items')}}" role="button">View All items</i></a>
+			<div class="text-right">
+  <a class="btn btn-success btn-lg" href="#" role="button">See Menu</i></a>
   </div>
+		
+  <div class="row special-list">
+
+  @foreach($Offer as  $offers)
+<a href="{{route('offerview',$offers->id)}}">
+	<div class="col-lg-4 col-md-6 special-grid drinks">
+	
+
+		<div class="gallery-single fix">
+			<img src="{{url('uploads/'. $offers->image)}}" class="img-fluid" alt="Image">
+			<div class="why-text">
+				<h4>Item-Name</h4>
+				<p class="card-text"> Item-{{ $offers->item_name}}</p>
+				<h5>  Price-{{ $offers->price}} </h5>
+			</div>
+		
+		</div>
+		</a>
+	</div>
+  
+@endforeach
+</div>
+</div>
+</div>
+	
 	<!-- End Gallery -->  
 	
 	<!-- Start Customer Reviews -->

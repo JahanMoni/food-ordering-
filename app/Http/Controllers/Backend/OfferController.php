@@ -16,9 +16,24 @@ class OfferController extends Controller
     }
     public function store(Request $request)
     {
+        {
+            $fileName='';
+        if($request->hasFile('image'))
+        {
+           $file=$request->file('image');
+           $fileName=date('Ymdms').'.'.$file->getClientOriginalExtension();
+           $file->storeAs('/uploads',$fileName);
+        }
+
+        
+        
+        }
+        {
         Offer::create([
         'user_id'=>auth()->user()->id,
         'item_name'=>$request->Item_name,
+        'image' =>$fileName,
+        'price' =>$request->price,
        'expire_date'=>$request->expire_date
         
        
@@ -26,5 +41,6 @@ class OfferController extends Controller
     return redirect()->back();
 
         }
+    }
     
 }

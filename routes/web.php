@@ -14,6 +14,7 @@ use App\Http\Controllers\Frontend\OrderController as FrontendOrder;
 use App\Http\Controllers\Frontend\OrderDetailsController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\OfferController as FrontendOffer;
 use App\Http\Controllers\Frontend\UserItemController;
 
 use App\Http\Controllers\Frontend\MyProfileController;
@@ -47,6 +48,8 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/checkout',[CartController::class,'checkoutshow'])->name('checkout');
  Route::get('/cart/clear',[CartController::class,'clear'])->name('clear');
  Route::post('/order/store',[CartController::class,'orderlist'])->name('orders.store');
+ Route::get('/Offer',[FrontendOffer::class,'Offer'])->name('Offer');
+ Route::get('/offer/{id}',[FrontendOffer::class,'offerview'])->name('offerview');
 
 
  Route::get('/logout',[UserController::class,'logout'])->name('user.logout');

@@ -17,6 +17,8 @@ class CreateOffersTable extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('item_name');
+            $table->string('image')->nullable();
+            $table->double('price',10,2)->default('0.00');
             $table->string('expire_date');
             $table->string('status',10)->default('active');
             $table->timestamps();
