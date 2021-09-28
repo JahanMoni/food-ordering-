@@ -27,10 +27,7 @@
       <td>{{$customer ->email}}</td>
       <td>{{$customer ->status}}</td>
       
-      <td scope="row"><a href="#" class="btn btn-primary">View</a>
-    
-    <a href="#" class="btn btn-warning">Edit</a>
-          <br> </br>
+     <td>
     
     <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
 </td>

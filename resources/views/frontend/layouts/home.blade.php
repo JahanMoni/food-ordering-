@@ -99,50 +99,110 @@
 	
 	<!-- End Menu -->
 	
+<!-- Restaurant Menu Section -->
+  <<div class="menu-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading-title text-center">
+						<h2>Offer Item</h2>
+						<div class="text-right">
+  <a class="btn btn-success btn-lg" href="{{route('menu')}}" role="button">See Menu</i></a>
+  </div>
+
+
+  
 
 
 
+				
+  <div class="row special-list">
+
+@foreach($offers as  $offer)
+<a href="{{route('offerview',$offer->id)}}">
+  <div class="col-lg-4 col-md-6 special-grid drinks">
+  
+
+	  <div class="gallery-single fix">
+		  <img src="{{url('uploads/'. $offer->image)}}" class="img-fluid" alt="Image">
+		  <div class="why-text">
+			  <h4>Item-Name</h4>
+			  <p class="card-text"> Item-{{ $offer->item_name}}</p>
+			  @if($offer->discount_price)
+			  <h4>{{$offer->discount_price}}</h4>
+			  <p>Price <strike>{{ $offer->price}}</strike>   </p>
+				@else
+
+			  <h4>{{$offer->price}}</h4>
+				@endif
+		  </div>
+	  
+	  </div>
+	  </a>
+  </div>
+
+@endforeach
+				
+				
+			
+				
+				
+				
+			</div>
+		</div>
+	</div>
+	
 
 	<!-- Start Gallery -->
-	
 	<div class="gallery-box">
 		<div class="container-fluid">
 			<div class="row">
-					<div class="col-lg-12">
+				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Offer Item</h2>
+						<h2>Gallery</h2>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
 					</div>
 				</div>
 			</div>
-			<div class="text-right">
-  <a class="btn btn-success btn-lg" href="#" role="button">See Menu</i></a>
-  </div>
-		
-  <div class="row special-list">
-
-  @foreach($Offer as  $offers)
-<a href="{{route('offerview',$offers->id)}}">
-	<div class="col-lg-4 col-md-6 special-grid drinks">
-	
-
-		<div class="gallery-single fix">
-			<img src="{{url('uploads/'. $offers->image)}}" class="img-fluid" alt="Image">
-			<div class="why-text">
-				<h4>Item-Name</h4>
-				<p class="card-text"> Item-{{ $offers->item_name}}</p>
-				<h5>  Price-{{ $offers->price}} </h5>
+	<div class="tz-gallery">
+				<div class="row">
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="{{url('/frontend/images/gallery-img-01.jpg')}}">
+							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-01.jpg')}}" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="{{url('/frontend/images/gallery-img-02.jpg')}}">
+							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-02.jpg')}}" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="{{url('/frontend/images/gallery-img-03.jpg')}}">
+							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-03.jpg')}}" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-12 col-md-4 col-lg-4">
+						<a class="lightbox" href="{{url('/frontend/images/gallery-img-04.jpg')}}">
+							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-04.jpg')}}" alt="Gallery Images">
+						</a>
+					</div>
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="{{url('/frontend/images/gallery-img-05.jpg')}}">
+							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-05.jpg')}}" alt="Gallery Images">
+						</a>
+					</div> 
+					<div class="col-sm-6 col-md-4 col-lg-4">
+						<a class="lightbox" href="{{url('/frontend/images/gallery-img-06.jpg')}}">
+							<img class="img-fluid" src="{{url('/frontend/images/gallery-img-06.jpg')}}" alt="Gallery Images">
+						</a>
+					</div>
+				</div>
 			</div>
-		
 		</div>
-		</a>
 	</div>
-  
-@endforeach
-</div>
-</div>
-</div>
-	
+
+
+
 	<!-- End Gallery -->  
 	
 	<!-- Start Customer Reviews -->

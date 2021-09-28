@@ -1,21 +1,25 @@
 <?php
-use App\Http\Controllers\Frontend\HomeController as FrontendHome;
+
 use App\Http\Controllers\Backend\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\Itemcontroller;
 use App\Http\Controllers\Backend\OfferController;
 use App\Http\Controllers\Backend\OrderController;
-use App\Http\Controllers\Backend\Registrationcontroller;
-use App\Http\Controllers\Backend\Employeecontroller;
 use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
+use App\Http\Controllers\Backend\PaymentController;
+
+
+
+use App\Http\Controllers\Frontend\HomeController as FrontendHome;
 use App\Http\Controllers\Frontend\OrderController as FrontendOrder;
 use App\Http\Controllers\Frontend\OrderDetailsController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\OfferController as FrontendOffer;
 use App\Http\Controllers\Frontend\UserItemController;
+use App\Http\Controllers\Frontend\MenuController;
 
 use App\Http\Controllers\Frontend\MyProfileController;
 
@@ -42,6 +46,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/orderDetails',[OrderDetailsController::class,'MyOrderDetails'])->name('MyOrderDetails');
  Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
  Route::get('/myprofile/Cencel/{id}',[MyProfileController::class,'Cancel'])->name('Cancel');
+ Route::get('/menu',[MenuController::class,'menulist'])->name('menu');
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
@@ -49,7 +54,8 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/cart/clear',[CartController::class,'clear'])->name('clear');
  Route::post('/order/store',[CartController::class,'orderlist'])->name('orders.store');
  Route::get('/Offer',[FrontendOffer::class,'Offer'])->name('Offer');
- Route::get('/offer/{id}',[FrontendOffer::class,'offerview'])->name('offerview');
+ Route::get('/offerview/{id}',[FrontendOffer::class,'offerview'])->name('offerview');
+
 
 
  Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
@@ -91,12 +97,18 @@ Route::get('/order',[OrderController::class,'order'])->name('orders.order');
 Route::get('/order/invoice/{id}',[OrderController::class,'invoice'])->name('orders.invoice');
 Route::get('/order/Approve/{id}/{status}',[OrderController::class,'approve'])->name('orders.approve');
 Route::get('/order/{id}',[OrderController::class,'orderdetails'])->name('orders.details');
-// Route::post('/order/store',[OrderController::class,'store'])->name('orders.store');
+ Route::get('/order/payment/{id}',[OrderController::class,'paymentlist'])->name('orders.payment');
+
+ Route::get('/payment',[paymentController::class,'payment'])->name('Payments.payment');
+ Route::post('/payment/store',[paymentController::class,'store'])->name('Payments.store');
+ Route::get('/payment/{id}',[paymentController::class,'payment'])->name('payments.payment');
+ 
 
 
 
 Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');
 Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaurant.store');
+// Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 
 
 
@@ -110,9 +122,7 @@ Route::get('/user/view/{id}',[BackendUser::class,'viewuser'])->name('user.viewus
 
 
 
-Route::get('/registration',[Registrationcontroller::class,'registration'])->name('registrations.registration');
-Route::post('/registration/store',[Registrationcontroller::class,'store'])->name('registrations.store');
-Route::get('/employee',[Employeecontroller::class,'employee'])->name('employees.employee');
+
 });
 
 // Route::group(['prefix'=>'manager','middleware'=>'manager'],function ()

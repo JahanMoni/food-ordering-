@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 
 use App\Models\Item;
 use App\Models\Category;
+use App\Models\Offer;
 
 
 use Illuminate\Http\Request;
@@ -16,7 +17,8 @@ class homecontroller extends Controller
     {
         $items=Item::latest()->take(6)->get();
          $category = Category::all();
-        return view('frontend.layouts.home',compact('items','category'));
+         $offers=Offer::latest()->take(6)->get();
+        return view('frontend.layouts.home',compact('items','category','offers'));
         }
 
         public function categoryitem($id)
@@ -28,6 +30,7 @@ class homecontroller extends Controller
             
             return view ('frontend.layouts.categorywise',compact('categoryWiseItem','Category'));
         }
+        
         
         
 }

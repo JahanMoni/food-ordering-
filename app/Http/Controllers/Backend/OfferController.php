@@ -34,6 +34,7 @@ class OfferController extends Controller
         'item_name'=>$request->Item_name,
         'image' =>$fileName,
         'price' =>$request->price,
+        'discount_price' =>$request->discount_price,
        'expire_date'=>$request->expire_date
         
        

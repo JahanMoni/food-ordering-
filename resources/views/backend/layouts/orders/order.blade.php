@@ -31,9 +31,11 @@
       <td>{{$order->receiver_phone_number}}</td>
       <td>{{$order->receiver_address}}</td>
       <td>{{$order->status}}</td>
-      <td scope="row"><a href="{{route('orders.details',$order->id)}}" class="btn btn-primary">View</a>
-      <a class="btn btn-success" href="{{route('orders.invoice',$order->id)}}">Invoice</a>
       <td scope="row">
+      <a href="{{route('orders.payment',$order->id)}}" class="btn btn-primary">Payment</a>
+      <a href="{{route('orders.details',$order->id)}}" class="btn btn-primary">View</a>
+      <a class="btn btn-success" href="{{route('orders.invoice',$order->id)}}">Invoice</a>
+      
        
         <div class="dropdown show">
   <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

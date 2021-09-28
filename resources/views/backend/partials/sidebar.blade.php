@@ -10,7 +10,7 @@
 
            
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <div class="sb-sidenav-menu-heading">Nusrat</div>
                             <a class="nav-link" href="{{route('dashboard.dash')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
@@ -26,6 +26,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 User
                             </a> 
+                            <a class="nav-link" href="{{route('customers.customer')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                               Customer
+                            </a>
 
 
                             <a class="nav-link" href="{{route('categories.category')}}">
@@ -42,36 +46,34 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Offer
                             </a>
-                            <a class="nav-link" href="{{route('customers.customer')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                               Customer
-                            </a>
+                           
 
                             <a class="nav-link" href="{{route('orders.order')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Order
                             </a>
+                            <a class="nav-link" href="{{route('Payments.payment')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                               Payment
+                            </a>
                             
-                            <a class="nav-link" href="{{route('registrations.registration')}}">
+                            <a class="nav-link" href="">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                               Registration
+                              Report
                             </a>
-                            <a class="nav-link" href="{{route('customers.customer')}}">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                               Customer
-                            </a>
+                           
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Manager
                             </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                Feedback
+                               
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                                 <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                                offer 
+                                
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
 
@@ -105,7 +107,7 @@
                                 </nav>
                             </div>
                         
-                            @endif
+                            <!-- @endif
             @if(auth()->user()->role=='manager')
             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
@@ -121,7 +123,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Item
                             </a>
-                            @endif 
+                            @endif  -->
                         </div>
                     </div>
                     

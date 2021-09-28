@@ -15,6 +15,7 @@
       <th scope="col">Item Name</th>
       <th scope="col">Image</th>
       <th scope="col">Price</th>
+      <th scope="col">Discount Price</th>
       <th scope="col">Expire Date</th>
       <th scope="col">Status</th>
       
@@ -32,7 +33,8 @@
       <td>
                 <img src="{{url('/uploads/'.$offers->image)}}" width="100px" alt="offer image">
             </td>
-      <td>{{$offers->item_name}}</td>
+      <td>{{$offers->price}}</td>
+      <td>{{$offers->discount_price}}</td>
       <td>{{$offers->expire_date}}</td>
       <td>{{$offers->status}}</td>
 </tr>
@@ -76,7 +78,12 @@
                                <div class="form-group">
                         <label for="price">price</label>
                         <input type="number" min="0" id="price" class="form-control" name="price"
-                            placeholder="Enter product price" style="background-color: white"></textarea>
+                            placeholder="Enter Item price" style="background-color: white"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Discount price</label>
+                        <input type="number" min="0" id="price" class="form-control" name="discount_price"
+                            placeholder="Enter discount_price" style="background-color: white"></textarea>
                     </div>
 
                     
