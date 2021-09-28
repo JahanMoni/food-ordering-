@@ -32,7 +32,7 @@
       <td>{{$order->receiver_address}}</td>
       <td>{{$order->status}}</td>
       <td scope="row">
-      <a href="{{route('orders.payment',$order->id)}}" class="btn btn-primary">Payment</a>
+      <a href="{{route('payments.create',$order->id)}}" class="btn btn-primary">Payment</a>
       <a href="{{route('orders.details',$order->id)}}" class="btn btn-primary">View</a>
       <a class="btn btn-success" href="{{route('orders.invoice',$order->id)}}">Invoice</a>
       

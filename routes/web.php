@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Backend\PaymentController;
+use App\Http\Controllers\Backend\ReportController;
 
 
 
@@ -97,13 +98,15 @@ Route::get('/order',[OrderController::class,'order'])->name('orders.order');
 Route::get('/order/invoice/{id}',[OrderController::class,'invoice'])->name('orders.invoice');
 Route::get('/order/Approve/{id}/{status}',[OrderController::class,'approve'])->name('orders.approve');
 Route::get('/order/{id}',[OrderController::class,'orderdetails'])->name('orders.details');
- Route::get('/order/payment/{id}',[OrderController::class,'paymentlist'])->name('orders.payment');
-
- Route::get('/payment',[paymentController::class,'payment'])->name('Payments.payment');
- Route::post('/payment/store',[paymentController::class,'store'])->name('Payments.store');
- Route::get('/payment/{id}',[paymentController::class,'payment'])->name('payments.payment');
  
 
+ Route::get('/payment/list',[paymentController::class,'paymentlist'])->name('Payments.payment');
+ Route::post('/payment/store',[paymentController::class,'store'])->name('Payments.store');
+ Route::get('/payment/create/{id}',[paymentController::class,'paymentcreate'])->name('payments.create');
+Route::get('/payment/list/Approve/{id}',[paymentController::class,'approve'])->name('Payments.approve');
+ 
+ 
+Route::get('/report',[ReportController::class,'report'])->name('Reports.report');
 
 
 Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');

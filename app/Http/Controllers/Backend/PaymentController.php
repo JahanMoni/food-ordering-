@@ -10,34 +10,50 @@ use Illuminate\Http\Request;
 
 class PaymentController extends Controller
 {
-    public function payment()
+    public function paymentlist()
     {
-        return view('backend.layouts.Payments.payment');
+        $payments=Payment::all();
+        return view('backend.layouts.Payments.paymentlist',compact('payments'));
     }
-    public function paymentlist($id)
-    {
-        $orders=order::find($id);
-        $users=User::all();
-        
-        return view('backend.layouts.Payments.paymentlist',compact('orders','users'));
-    }
+    public function paymentcreate($id)
 
-    public function store(Request $request)
-    {
-         Payment:: Create([
-        
-            'user_id'=>auth()->user()->id,
-           'order_id'=>$request->order_id,
-           'pay_at'=>$request->date,
-           'total_payment'=>$request->total_payment,
-        
+    {  
        
+        
+            $orders=order::find($id);
+            $payments=Payment::all();
+           
+        
+    
+            return view('backend.layouts.Payments.payment',compact('orders','payments'));
+ 
+    }
+         
+         
+    public function store(Request $request)
+        {
+         
 
-  ]);
-  return redirect()->back();
-}
+        {
+            Payment::create([
+                'user_id'=>auth()->user()->id,
+                'order_id'=>$request->order_id,
+                
+                'total_payment'=>$request->total_payment,
+                'pay_at'=>$request->date,
+            
+            ]); 
+            return redirect()->back();
+        }
+    }
 
-
+    public function approve($id)
+     {
+        Payment::find($id)->update([
+     'status'=>'Paid'
+     ]);
+     return redirect()->back()->with('message','Payment Confirm'); 
+     }
 
     
 }

@@ -10,19 +10,21 @@
         <form action="{{route('Payments.store')}}" method="Post">
             @csrf
 
+            <div class="col-md-4">
+            <label for="message-text" class="col-form-label">User ID:</label>
+            <input value="{{$orders->id}}" type="number" name="id" class="form-control" id="recipient-name">
+          </div>
+
         <div class="col-md-6">
             <label for="recipient-name" class="col-form-label">Order ID:</label>
-            <input value="{{$orders->id}}" type="number" name="order_id" class="form-control" id="recipient-name">
+            <input value="{{$orders->order_id}}" type="number" name="order_id" class="form-control" id="recipient-name">
           </div>
           
           <div class="col-md-5">
             <label for="recipient-name" class="col-form-label">Total Payment</label>
             <input type="{{$orders->total_payment}}" name="total_payment" class="form-control" id="recipient-name">
           </div>
-          <div class="col-md-4">
-            <label for="message-text" class="col-form-label">User ID:</label>
-            <input value="{{$orders->user_id}}" type="number" name="id" class="form-control" id="recipient-name">
-          </div>
+          
           
           <div class="col-md-3">
             <label for="message-text" class="col-form-label">Pay at:</label>

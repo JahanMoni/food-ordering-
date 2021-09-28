@@ -48,18 +48,7 @@ class Ordercontroller extends Controller
 
      return redirect()->back()->with('message','item order approved sucessfully'); 
      }
-     public function paymentlist($id)
-
-    {  
-       
-        
-            $orders=order::where('order_id',$id)->get();
-            // dd($orders);
-        
     
-            return view('backend.layouts.orders.payment',compact('orders'));
- 
-    }
     
     
     
