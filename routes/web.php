@@ -107,6 +107,7 @@ Route::get('/payment/list/Approve/{id}',[paymentController::class,'approve'])->n
  
  
 Route::get('/report',[ReportController::class,'report'])->name('Reports.report');
+Route::post('/report/store',[ReportController::class,'store'])->name('report');
 
 
 Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');

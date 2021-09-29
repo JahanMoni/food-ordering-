@@ -23,6 +23,27 @@
         @endif
 
 
+
+
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <h1>Report</h1>
+                <table class="table">
+                    <form  action="{{ route('report') }}" method="post">
+                        @csrf
+                        <div class="form-group">
+                        <label for="date">Date From:</label>
+                        <input name="date"type="date" value="" class="" id="date" >
+                    </div>
+                    <div class="form-group">
+                        <label for="date1">Date To:</label>
+                        <input name="date1"type="date" value="" class="align:right" id="date1" >
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                 </form>
+
+
     <table class="table table-striped">
   <thead>
     <tr>
@@ -39,7 +60,7 @@
     </tr>
   </thead>
   <tbody>
-  @foreach($orders as $key=>$order)
+  @foreach($report as $key=>$order)
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$order->user_id}}</td>
