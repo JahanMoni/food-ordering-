@@ -9,7 +9,6 @@
         <h2>Payment </h2>
         <form action="{{route('Payments.store')}}" method="Post">
             @csrf
-
             <div class="col-md-4">
             <label for="message-text" class="col-form-label">User ID:</label>
             <input value="{{$orders->id}}" type="number" name="id" class="form-control" id="recipient-name">

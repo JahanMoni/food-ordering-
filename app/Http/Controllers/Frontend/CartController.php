@@ -24,9 +24,21 @@ class CartController extends Controller
         session()->forget('cart');
         return redirect()->back();
     }
+
+
+    public function delete($id)
+        {
+        //  dd($id);
+            $cart=session('cart');
+           
+            unset($cart[$id]);
+            session()->put('cart',$cart);
+            return redirect()->back()->with('message','item Deleted successfully.');
+            
+            
+        }
+
     
-
-
    
     public function addTocart($id)
     {

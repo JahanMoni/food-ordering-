@@ -26,7 +26,7 @@ class UserController extends Controller
             if(auth()->user()->role=='admin' || auth()->user()->role=='manager')
             {
                 
-            return redirect()->route('dashboard');
+            return redirect()->route('dashboard.dash');
             }
         }
         else

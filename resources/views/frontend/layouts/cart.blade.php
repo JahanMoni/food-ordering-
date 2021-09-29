@@ -12,11 +12,11 @@
 <body>
 
 <style type="text/css">
-body {
-    
 
-  
-    background-image:url('https://img.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg?size=626&ext=jpg');
+
+body {
+
+    background-image:url('https://image.freepik.com/free-photo/delicious-vietnamese-food-including-pho-ga-noodles-spring-rolls-white-table_181624-34062.jpg');
   background-position:center;
   background-size:cover;
 
@@ -24,6 +24,19 @@ body {
   padding: 0;
   background-color: #17a2b8;
   height: 100vh;
+}
+#login .container #login-row #login-column #login-box {
+  margin-top: 120px;
+  max-width: 600px;
+  height: 320px;
+  border: 1px solid #9C9C9C;
+  background-color: #EAEAEA;
+}
+#login .container #login-row #login-column #login-box #login-form {
+  padding: 20px;
+}
+#login .container #login-row #login-column #login-box #login-form #register-link {
+  margin-top: -85px;
 }
 </style>
 
@@ -71,6 +84,7 @@ body {
 @if($carts)
 @foreach($carts as $key=>$cart)
 
+
 <tr>
 <td class="cart_product">
 <a href=""><img src="images/cart/one.png" alt=""></a>
@@ -84,10 +98,6 @@ body {
 <td class="cart_price">
 <p>{{$cart['price']}}</p>
 </td>
-
-
-
-
     <td class="cart_quantity">
         <span class="cart_quantity_button">
             <input style="width: 40px" class="cart_quantity_input" type="hidden" name="id" value="#" autocomplete="off" >
@@ -95,7 +105,7 @@ body {
         <button type="submit" class="btn btn-primary">edit</button>
         </span>
         <span class="text-center">
-            <a href="#"  class="btn btn-primary"> Delete</a>
+            <a href="{{route('cart.delete',$key)}}"  class="btn btn-primary"> Delete</a>
             </span>
 </td>
 

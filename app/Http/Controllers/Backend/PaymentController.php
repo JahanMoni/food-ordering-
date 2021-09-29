@@ -19,12 +19,9 @@ class PaymentController extends Controller
 
     {  
        
-        
             $orders=order::find($id);
             $payments=Payment::all();
            
-        
-    
             return view('backend.layouts.Payments.payment',compact('orders','payments'));
  
     }

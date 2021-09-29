@@ -56,6 +56,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::post('/order/store',[CartController::class,'orderlist'])->name('orders.store');
  Route::get('/Offer',[FrontendOffer::class,'Offer'])->name('Offer');
  Route::get('/offerview/{id}',[FrontendOffer::class,'offerview'])->name('offerview');
+ Route::get('/cart/delete/{id}',[CartController::class,'delete'])->name('cart.delete');
 
 
 
@@ -135,7 +136,7 @@ Route::get('/user/view/{id}',[BackendUser::class,'viewuser'])->name('user.viewus
 // Route::get('/item',[ItemController::class,'item'])->name('items.item');
 //  Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
 // });
-Route::get('/',[HomeController::class,'home'])->name('dashboard');
+ Route::get('/',[HomeController::class,'home'])->name('dashboard');
 Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
 
 });
