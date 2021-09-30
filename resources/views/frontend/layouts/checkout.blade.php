@@ -357,7 +357,8 @@ hr{
                 <div class="row">
                     
                     <div style="display: table; margin: auto;">
-                        <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span> <span class="step_line backline"> </span> </span>
+                        <span class="step step_complete"> <a href="#" class="check-bc">Cart</a> <span class="step_line step_complete"> </span>
+                         <span class="step_line backline"> </span> </span>
                         <span class="step step_complete"> <a href="#" class="check-bc">Checkout</a> <span class="step_line "> </span> <span class="step_line step_complete"> </span> </span>
                         <span class="step_thankyou check-bc step_complete">Thank you</span>
                     </div>
@@ -378,9 +379,11 @@ hr{
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-push-6 col-sm-push-6">
                     <!--REVIEW ORDER-->
                     <div class="panel panel-info">
-                        <div class="panel-heading">
-                            Review Order <div class="pull-right"><small><a class="afix-1" href="#">Edit Cart</a></small></div>
-                        </div>
+                        
+                    <div class="heading-title text-center">
+						<h4>Review Order</h4>
+						
+					</div>
                         <div class="panel-body">
                         <ul style="font-weight: bold; font-size: 25px; ">
 							<li>Cart Sub Total <span>{{$total}}</span></li>
@@ -405,33 +408,39 @@ hr{
                         
                             <div class="form-group">
                     <div class="panel-heading">
+                   
+                       
 
                                 <div class="col-md-12">
                                 <i><h4>Customer Information</h4></i>
                                 </div>
                             </div>
+                         
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Full Name:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="full_name" value="" />
+                                    <input  type="text" class="form-control" name="full_name" placeholder="Enter your Name*" />
                                 </div>
                             </div>
-                            
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Address:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="address" class="form-control" value="" />
+                                    <input type="text" class="form-control" name="address" placeholder="Enter your Address*" />
                                 </div>
                             </div>
+                            
+                            
                            
                            
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Phone Number:</strong></div>
-                                <div class="col-md-12"><input type="text" name="phone_number" class="form-control" value="" /></div>
+                                <div class="col-md-12">
+                                    <input  type="text" name="phone_number" class="form-control" placeholder="Enter your Phone Number*" /></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email Address:</strong></div>
-                                <div class="col-md-12"><input type="text" name="email_address" class="form-control" value="" /></div>
+                                <div class="col-md-12">
+                                    <input type="text" name="email_address" class="form-control" placeholder="Enter your Email *" /></div>
                             </div>
                         </div>
                     </div>

@@ -11,7 +11,7 @@
 <table class="table">
   <thead>
     <tr>
-    <th scope="col">id</th>
+   
       <th scope="col">User id</th>
       <th scope="col">Order id</th>
       <th scope="col">Pay_at</th>
@@ -24,8 +24,7 @@
   <tbody>
     <tr>
     @foreach($payments as $key=>$payment)
-      <th scope="row">1</th>
-      <td>{{$payment->user_id}}</td>
+      <th scope="row">{{$payment->user_id}}</th>
       <td>{{$payment->order_id}}</td>
       <td>{{$payment->pay_at}}</td>
       <td>{{$payment->payment_type}}</td>

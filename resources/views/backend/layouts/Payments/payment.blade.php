@@ -21,7 +21,7 @@
           
           <div class="col-md-5">
             <label for="recipient-name" class="col-form-label">Total Payment</label>
-            <input type="{{$orders->total_payment}}" name="total_payment" class="form-control" id="recipient-name">
+            <input value="{{$orders->total_payment}}" name="total_payment" class="form-control" id="recipient-name">
           </div>
           
           

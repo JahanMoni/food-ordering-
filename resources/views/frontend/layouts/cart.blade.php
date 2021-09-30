@@ -102,7 +102,7 @@ body {
         <span class="cart_quantity_button">
             <input style="width: 40px" class="cart_quantity_input" type="hidden" name="id" value="#" autocomplete="off" >
         <input style="width: 40px" class="cart_quantity_input" type="number" name="quantity" value="{{$cart['quantity']}}" autocomplete="off" >
-        <button type="submit" class="btn btn-primary">edit</button>
+        
         </span>
         <span class="text-center">
             <a href="{{route('cart.delete',$key)}}"  class="btn btn-primary"> Delete</a>

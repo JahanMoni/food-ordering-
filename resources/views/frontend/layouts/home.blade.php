@@ -4,14 +4,14 @@
 @section('contents')
 
 @include('frontend.partials.slider')
-
+<!-- about section -->
 <div class="about-section-box">
 
 
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-12">
-					<img src="{{url('/frontend/images/about-img.jpg')}}" alt="" class="img-fluid">
+					<img src="{{url('/frontend/images/gallery-img-04.jpg')}}" alt="" class="img-fluid">
 				</div>
 				<div class="col-lg-6 col-md-6 col-sm-12 text-center">
 					<div class="inner-column">

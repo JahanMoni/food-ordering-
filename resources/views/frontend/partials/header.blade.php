@@ -19,7 +19,7 @@
                             <i class="fa fa-search"></i></button>
                         </form>
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
-						<li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
                        
 

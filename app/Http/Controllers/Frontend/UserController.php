@@ -17,18 +17,7 @@ class UserController extends Controller
         public function signupFormPost(Request $request)
         {
             
-           
-            $fileName='';
-        if($request->hasFile('image'))
-        {
-           $file=$request->file('image');
-           $fileName=date('Ymdms').'.'.$file->getClientOriginalExtension();
-           $file->storeAs('/uploads',$fileName);
-        
-        }
-
-          
-           $request->validate([
+            $request->validate([
             'full_name'=>'required',
             'phone_number'=>'required',
             'email'=>'required|email|unique:users',
@@ -41,7 +30,7 @@ class UserController extends Controller
             User::create([
                'full_name'=>$request->full_name,
                'phone_number'=>$request->phone_number,
-               'image' =>$fileName,
+               
                'email'=>$request->email,
                'address'=>$request->address,
                'action'=>$request->action,

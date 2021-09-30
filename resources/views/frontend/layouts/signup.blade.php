@@ -29,7 +29,7 @@ body {
 </style>
 
 
-<form action="{{route('user.signup.store')}}" type="form" method="POST"enctype="multipart/form-data">
+<form action="{{route('user.signup.store')}}" type="form" method="POST">
 @csrf
 <div class="container">
 <div class="row justify-content-center">
@@ -58,27 +58,20 @@ body {
 <label for="full_name" class="cols-sm-2 control-label">Full Name</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name" />
+<input required type="text" class="form-control" name="full_name" id="full_name" placeholder="Enter your Name*" />
 </div>
 </div>
 </div>
 
 
 
-<div class="form-group">
-<label for="images" class="cols-sm-2 control-label">image</label>
-<div class="cols-sm-10">
-<div class="input-group">
-<input type="file" class="form-control" name='images' >
-</div>
-</div>
-</div>
+
 
 <div class="form-group">
  <label for="phone_number" class="cols-sm-2 control-label">Phone Number</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="number" class="form-control" name="phone_number" id="name" placeholder="Enter your Phone Number">
+<input required type="number" class="form-control" name="phone_number" id="name" placeholder="Enter your Phone Number*">
 </div>
 </div>
 </div>
@@ -86,7 +79,7 @@ body {
  <label for="address" class="cols-sm-2 control-label"> Address</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="text" class="form-control" name=" address" id="name" placeholder="Enter your Name">
+<input required type="text" class="form-control" name=" address" id="name" placeholder="Enter your address*">
 </div>
 </div>
 </div>
@@ -96,7 +89,7 @@ body {
 <label for="email" class="cols-sm-2 control-label">Email</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="email" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+<input required type="email" class="form-control" name="email" id="email" placeholder="Enter your Email*" />
 </div>
 </div>
 </div>
@@ -104,7 +97,7 @@ body {
 <label for="password" class="cols-sm-2 control-label">Password</label>
 <div class="cols-sm-10">
 <div class="input-group">
-<input required type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+<input required type="password" class="form-control" name="password" id="password" placeholder="Enter your Password*" />
 </div>
 </div>
 </div>
@@ -113,7 +106,7 @@ body {
 <div class="form-group ">
 <button type="submit" class="btn btn-success btn-lg btn-block login-button" href=" " >Submit</button>
 <br> </br>
-<a href=" " target="_blank" >Forgot Password?</a>
+
 
 
 </form>

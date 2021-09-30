@@ -15,7 +15,7 @@
 </div>
     </div>
     <div id="printableArea">
-            <h1>Order List</h1>
+            <h1>Nusrat Restaurent</h1>
     @if(session()->has('message'))
         <div class="row" style="padding: 10px;">
             <span class="alert alert-success">{{session()->get('message')}}</span>
@@ -27,7 +27,7 @@
 
         <div class="row justify-content-center">
             <div class="col-md-10">
-                <h1>Report</h1>
+                <h1>order List</h1>
                 <table class="table">
                     <form  action="{{ route('report') }}" method="post">
                         @csrf

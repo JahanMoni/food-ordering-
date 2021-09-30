@@ -21,7 +21,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\OfferController as FrontendOffer;
 use App\Http\Controllers\Frontend\UserItemController;
 use App\Http\Controllers\Frontend\MenuController;
-
+use App\Http\Controllers\Frontend\AboutController;
 use App\Http\Controllers\Frontend\MyProfileController;
 
 use Illuminate\Support\Facades\Route;
@@ -48,6 +48,10 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
  Route::get('/myprofile',[MyProfileController::class,'myprofile'])->name('myprofile');
  Route::get('/myprofile/Cencel/{id}',[MyProfileController::class,'Cancel'])->name('Cancel');
  Route::get('/menu',[MenuController::class,'menulist'])->name('menu');
+ Route::get('/about',[AboutController::class,'about'])->name('about');
+
+
+
 
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
