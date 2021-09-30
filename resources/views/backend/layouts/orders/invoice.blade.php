@@ -131,26 +131,19 @@ hr {
         <h1 class="page-title text-secondary-d1">
             Invoice
             <small class="page-info">
-                <i class="fa fa-angle-double-right text-80"></i>
-                ID: #111-222
+               
+              : Nusrat Restaure
             </small>
         </h1>
         
 
-        <div class="page-tools">
-            <div class="action-buttons">
-                <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="Print">
-                    <i class="mr-1 fa fa-print text-primary-m1 text-120 w-2"></i>
-                    Print
-                </a>
-                <a class="btn bg-white btn-light mx-1px text-95" href="#" data-title="PDF">
-                    <i class="mr-1 fa fa-file-pdf-o text-danger-m1 text-120 w-2"></i>
-                    Export
-                </a>
-            </div>
-        </div>
+        <div class="heading-title text-left">  <!-- Button trigger modal -->
+<button class="btn btn-danger btn-lg" onclick="printDiv('printableArea')">
+    <i class="fas fa-print"></i> Print
+</button>
+</div>
     </div>
-
+ <div id="printableArea">
     <div class="container px-0">
         <div class="row mt-4">
             <div class="col-12 col-lg-10 offset-lg-1">
@@ -225,64 +218,7 @@ hr {
 
                     <div class="row border-b-2 brc-default-l2"></div>
 
-                    <!-- or use a table instead -->
-                    <!--
-            <div class="table-responsive">
-                <table class="table table-striped table-borderless border-0 border-b-2 brc-default-l1">
-                    <thead class="bg-none bgc-default-tp1">
-                        <tr class="text-white">
-                            <th class="opacity-2">#</th>
-                            <th>Description</th>
-                            <th>Qty</th>
-                            <th>Unit Price</th>
-                            <th width="140">Amount</th>
-                        </tr>
-                    </thead>
-
-                    <tbody class="text-95 text-secondary-d3">
-                        <tr></tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Domain registration</td>
-                            <td>2</td>
-                            <td class="text-95">$10</td>
-                            <td class="text-secondary-d2">$20</td>
-                        </tr> 
-                    </tbody>
-                </table>
-            </div>
-            -->
-
-                    <!-- <div class="row mt-3">
-                        <div class="col-12 col-sm-7 text-grey-d2 text-95 mt-2 mt-lg-0">
-                            Extra note such as company or payment information...
-                        </div>
-
-                        <div class="col-12 col-sm-5 text-grey text-90 order-first order-sm-last">
-                            <div class="row my-2">
-                                <div class="col-7 text-right">
-                                    SubTotal
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-120 text-secondary-d1">$2,250</span>
-                                </div>
-                            </div>
-
-                            
-                                
-
-                            <div class="row my-2 align-items-center bgc-primary-l3 p-2">
-                                <div class="col-7 text-right">
-                                    Total Amount
-                                </div>
-                                <div class="col-5">
-                                    <span class="text-150 text-success-d3 opacity-2">$2,475</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <hr /> -->
+                  
 
                     <div>
                         <span class="text-secondary-d1 text-105">Thank you for your order</span>
@@ -290,4 +226,21 @@ hr {
                     </div>
                 </div>
             </div>
+</div>
+
+
+
+            <script type="text/javascript">
+        function printDiv(divName) {
+            var printContents = document.getElementById(divName).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+        }
+    </script>
+
             @endsection

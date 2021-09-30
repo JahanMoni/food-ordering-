@@ -28,7 +28,7 @@
   @foreach($items as $key=>$item)
 
 <tr>
-<th scope="row">{{$key+1}}</th>>
+    <th scope="row">{{$key+1}}</th>>
     <td>{{$item->item_name}}</td>
     <td>{{optional($item->category)->name}}</td>
     

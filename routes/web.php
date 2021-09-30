@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\Restaurantcontroller;
 use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Backend\PaymentController;
 use App\Http\Controllers\Backend\ReportController;
+use App\Http\Controllers\Backend\DelivaryManController;
 
 
 
@@ -113,6 +114,9 @@ Route::get('/payment/list/Approve/{id}',[paymentController::class,'approve'])->n
  
 Route::get('/report',[ReportController::class,'report'])->name('Reports.report');
 Route::post('/report/store',[ReportController::class,'store'])->name('report');
+
+Route::get('/deliveryman',[DelivaryManController::class,'list'])->name('delivery.list');
+Route::post('/deliveryman/store/',[DelivaryManController::class,'store'])->name('delivery.store');
 
 
 Route::get('/info',[Restaurantcontroller::class,'info'])->name('Restaurant.info');

@@ -78,5 +78,6 @@
 	<script src="{{url('/frontend/js/form-validator.min.js')}}"></script>
     <script src="{{url('/frontend/js/contact-form-script.js')}}"></script>
     <script src="{{url('/frontend/js/custom.js')}}"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
 </html>

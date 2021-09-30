@@ -61,6 +61,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                               Report
                             </a>
+                            <a class="nav-link" href="{{route('delivery.list')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                             DelivaryMan
+                            </a>
                            
                             <a class="nav-link" href="#">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>

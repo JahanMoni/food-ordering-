@@ -1,38 +1,6 @@
 <!-- Start Contact info -->
 
-<div class="contact-imfo-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<i class="fa fa-volume-control-phone"></i>
-					<div class="overflow-hidden">
-						<h4>Phone</h4>
-						<p class="lead">
-							01972260772
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-envelope"></i>
-					<div class="overflow-hidden">
-						<h4>Email</h4>
-						<p class="lead">
-							jahanmoni1711@gmail.com
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-map-marker"></i>
-					<div class="overflow-hidden">
-						<h4>Location</h4>
-						<p class="lead">
-						uttara,Dhaka
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
     <!-- End Contact info -->
     	<!-- Start Footer -->
 
@@ -53,8 +21,8 @@
 				<div class="col-lg-3 col-md-6">
 					<h3>Contact information</h3>
 					<p class="lead">uttara,dhaka 508000</p>
-					<p class="lead"><a href="#">+01 2000 800 9999</a></p>
-					<p><a href="#"> info@admin.com</a></p>
+					<p class="lead"><a href="#">01972260772</a></p>
+					<p><a href="#"> nusrat@admin.com</a></p>
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h3>Subscribe</h3>

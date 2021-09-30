@@ -29,19 +29,22 @@
             <div class="col-md-10">
                 <h1>order List</h1>
                 <table class="table">
-                    <form  action="{{ route('report') }}" method="post">
-                        @csrf
-                        <div class="form-group">
-                        <label for="date">Date From:</label>
-                        <input name="date"type="date" value="" class="" id="date" >
-                    </div>
-                    <div class="form-group">
-                        <label for="date1">Date To:</label>
-                        <input name="date1"type="date" value="" class="align:right" id="date1" >
-                    </div>
+                <form action="{{route('report')}}" method="post">
+                     @csrf
+               <div class="row" style="padding-left: 300px;padding-top: 100px;">
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                 </form>
+                  <div class="col-md-4">
+                       <input name="date" type="date" class="form-control">
+                </div>
+                     <div class="col-md-4">
+                    <input name="date1" type="date" class="form-control">
+         </div>
+    <div class="col-md-4">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+
+</div>
+    </form>
 
 
     <table class="table table-striped">
