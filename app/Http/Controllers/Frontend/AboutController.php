@@ -11,4 +11,5 @@ class AboutController extends Controller
     {
         return view('frontend.layouts.about');
     }
+    
 }

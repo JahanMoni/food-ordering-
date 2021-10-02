@@ -76,10 +76,10 @@ public function  delete($id)
             
             }
             $categories=Category::find($id);
-            $categories->updates([
+            $categories->update([
                 'name' =>$request->Category_name,
-                'details' =>$request->description,
-                'image' =>$fileName
+                'details' =>$request->details,
+               
             ]); 
 
             return redirect()->route('categories.category')->with('message','item updated successfully.');

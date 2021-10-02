@@ -104,14 +104,13 @@ class CartController extends Controller
     
     public function checkoutshow()
     {
-
-        $carts = session()->get('cart'); 
-        $total=array_sum(array_column($carts,'total_price'));
-
-         return view ('frontend.layouts.checkout',compact('carts','total'));
+         return view ('frontend.layouts.checkout');
      }
+
      public function orderlist(Request $request)
     {
+         
+    
         $carts = session('cart');
 
     
@@ -119,7 +118,7 @@ class CartController extends Controller
         
              'user_id'=>auth()->user()->id,
              'receiver_name'=>$request->full_name,
-            'receiver_email'=>$request->email_address,
+             'receiver_email'=>$request->receiver_email,
              'receiver_phone_number'=>$request->phone_number,
              'receiver_address'=>$request->address,
              'total_payment'=>array_sum(array_column($carts,'total_price'))
@@ -139,7 +138,13 @@ class CartController extends Controller
            ]);
            
        }
-       return redirect()->back()->with('success','order successfully.');
+       session()->forget('cart');
+    //    return redirect()->back();
+
+       
+       
+
+       return redirect()->route('home')->with('success','order successfully.');
     }
 
      

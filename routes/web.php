@@ -54,6 +54,7 @@ Route::get('/item',[UserItemController::class,'item'])->name('items');
 
 
 
+
  Route::get('/cart',[CartController::class,'cart'])->name('cart');
  Route::get('/cart/addToCart/{id}',[CartController::class,'addTocart'])->name('addTocart');
  Route::get('/checkout',[CartController::class,'checkoutshow'])->name('checkout');
@@ -93,6 +94,8 @@ Route::put('/category/update/{id}',[CategoryController::class,'update'])->name('
 Route::get('/item',[ItemController::class,'item'])->name('items.item');
 Route::post('/item/store',[ItemController::class,'store'])->name('items.store');
 Route::get('/item/delete/{id}',[ItemController::class,'delete'])->name('items.delete');
+Route::get('/item/edit/{id}',[ItemController::class,'edit'])->name('items.edit');
+Route::put('/item/update/{id}',[ItemController::class,'update'])->name('items.update');
 
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');

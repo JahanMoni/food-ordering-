@@ -11,7 +11,7 @@
 				<div class="collapse navbar-collapse" id="navbars-rs-food">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active"><a class="nav-link" href="{{route('home')}}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Menu</li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('menu')}}">Menu</li>
 						<form action="{{route('search')}}" method="get">
 {{--                            @csrf--}}
                         <input style="width: 250px;" type="text" placeholder="Search" name="search" class="form-control">
@@ -20,7 +20,8 @@
                         </form>
 						<li class="nav-item"><a class="nav-link" href="{{route('items')}}">Item</li>
 						<li class="nav-item"><a class="nav-link" href="{{route('about')}}">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{route('cart')}}">Cart</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{route('cart')}}">Cart({{session()->has('cart')?count(session()->get('cart')):0}})</a></li>
+						
                        
 
 						@if(auth()->user())
@@ -45,14 +46,7 @@
                         
 						
 				
-                     <li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
-							<div class="dropdown-menu" aria-labelledby="dropdown-a">
-								<a class="dropdown-item" href="reservation.html">Reservation</a>
-								<a class="dropdown-item" href="stuff.html">Stuff</a>
-								<a class="dropdown-item" href="gallery.html">Gallery</a>
-							</div>
-						</li>
+
 				
 							
 	

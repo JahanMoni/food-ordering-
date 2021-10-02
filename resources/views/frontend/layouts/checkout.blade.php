@@ -346,6 +346,14 @@ hr{
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
+
+@php 
+ $carts = session()->get('cart'); 
+ $total=array_sum(array_column($carts,'total_price'));
+
+
+
+@endphp
 <div class="container wrapper">
             <div class="row cart-head">
                 <div class="container">
@@ -370,7 +378,7 @@ hr{
             </div>    
             <div class="row cart-body">
             @if(session()->has('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" style="height:30px; width:100%">
         {{ session()->get('success') }}
     </div>
 @endif
@@ -415,17 +423,32 @@ hr{
                                 <i><h4>Customer Information</h4></i>
                                 </div>
                             </div>
+                            <!-- /resources/views/post/create.blade.php -->
+
+
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+<!-- Create Post Form -->
                          
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Full Name:</strong></div>
                                 <div class="col-md-12">
-                                    <input  type="text" class="form-control" name="full_name" placeholder="Enter your Name*" />
+                                    <input required  type="text" class="form-control" name="full_name" placeholder="Enter your Name*" />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Address:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" name="address" placeholder="Enter your Address*" />
+                                    <input required type="text" class="form-control" name="address" placeholder="Enter your Address*" />
                                 </div>
                             </div>
                             
@@ -435,12 +458,12 @@ hr{
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Phone Number:</strong></div>
                                 <div class="col-md-12">
-                                    <input  type="text" name="phone_number" class="form-control" placeholder="Enter your Phone Number*" /></div>
+                                    <input required  type="text" name="phone_number" class="form-control" placeholder="Enter your Phone Number*" /></div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Email Address:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" name="email_address" class="form-control" placeholder="Enter your Email *" /></div>
+                                    <input required type="email" name="receiver_email" class="form-control" placeholder="Enter your Email *" /></div>
                             </div>
                         </div>
                     </div>

@@ -101,7 +101,7 @@ body {
     <td class="cart_quantity">
         <span class="cart_quantity_button">
             <input  style="width: 40px" class="cart_quantity_input" type="hidden" name="id" value="#" autocomplete="off" >
-        <input min="0", max="50" style="width: 40px" class="cart_quantity_input" type="number" name="quantity" value="{{$cart['quantity']}}" autocomplete="off" >
+        <input   min="0", max="50" style="width: 40px" class="cart_quantity_input" type="number" name="quantity" value="{{$cart['quantity']}}" autocomplete="off" >
         
         </span>
         <span class="text-center">
@@ -117,16 +117,21 @@ body {
 </td>
 
 @endforeach
-@endif
+
 
 
 </tbody>
 
 
 </table>
+
 <a class="btn btn-success" style="float:right" href="{{route('checkout')}}">Check Out</a>
 <a class="btn btn-success" style="float:right" href="{{route('clear')}}">clear</a>
+@else
 
+<h1>No data into your cart.</h1>
+
+@endif
 </div>
 
 
