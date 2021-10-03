@@ -8,6 +8,8 @@
 
 
 
+
+
 <div class="about-section-box">
 <div class="heading-title text-center">
 						<h2>About as</h2>
@@ -34,38 +36,48 @@
 
 
 
-	<div class="contact-imfo-box">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4">
-					<i class="fa fa-volume-control-phone"></i>
-					<div class="overflow-hidden">
-						<h4>Phone</h4>
-						<p class="lead">
-							+01 123-456-4590
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-envelope"></i>
-					<div class="overflow-hidden">
-						<h4>Email</h4>
-						<p class="lead">
-							yourmail@gmail.com
-						</p>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<i class="fa fa-map-marker"></i>
-					<div class="overflow-hidden">
-						<h4>Location</h4>
-						<p class="lead">
-							800, Lorem Street, US
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	<div class="about-section-box">
+<div class="heading-title text-center">
+						<h2>Nusrat Restaurant Contact Section</h2>
+						
+</div>
+
+
+	
+	<div class="form-row text-center  ">
+    <div class="form-group col-md-6 text-center">
+      <label for="inputName">Name</label>
+      <input readonly type="name "name="restaurant_name" class="form-control" id="inputName" placeholder="Enter Name" value="{{$checkInfo->name??''}}" style="background-color: Azure"> 
+    </div> 
+ 
+        
+    <div class="form-group col-md-6 text-center">
+      <label for="inputName">Email</label>
+      <input readonly type="name "name="email" class="form-control" id="inputName" placeholder="Enter Name" value="{{$checkInfo->email??''}}" style="background-color: Azure">
+    </div>
+
+    <div class="form-group col-md-6 text-center">
+      <label for="inputName">Phone Number</label>
+      <input readonly type="name "name="password" class="form-control" id="inputName" placeholder="Enter Name" value= 01972260772 style="background-color: Azure">
+    </div>
+
+ <div class="form-group col-md-6 text-center">
+      <label for="inputName">Address</label>
+      <input readonly type="name "name="address" class="form-control" id="inputName" placeholder="Enter Name" value="{{$checkInfo->address??''}}" style="background-color: Azure">
+    </div>
+  
+    <div class="form-group col-md-6 text-center">
+      <label for="inputName">city</label>
+      <input readonly type="name "name="city" class="form-control" id="inputName" placeholder="Enter Name" value="{{$checkInfo->city??''}}" style="background-color: Azure">
+    </div>
+    
+    
+  </div>
+  
+  <div class="form-group text-center ">
+<button type="submit" class="btn btn-danger " >Contact With Us</button>
+<br> </br>
+</form>
+	
 	<!-- End Contact info -->
     @endsection

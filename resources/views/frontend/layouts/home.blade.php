@@ -129,8 +129,8 @@
 			  <h4>Item-Name</h4>
 			  <p class="card-text"> Item-{{ $offer->item_name}}</p>
 			  @if($offer->discount_price)
-			  <h4>{{$offer->discount_price}}</h4>
-			  <p>Price <strike>{{ $offer->price}}</strike>   </p>
+			  <h4>{{$offer->discount_price}}.BDT</h4>
+			  <p>Price <strike>{{ $offer->price}}.BDT</strike>   </p>
 				@else
 
 			  <h4>{{$offer->price}}</h4>

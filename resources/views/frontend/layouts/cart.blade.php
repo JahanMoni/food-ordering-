@@ -96,7 +96,7 @@ body {
 
 </td>
 <td class="cart_price">
-<p>{{$cart['price']}}</p>
+<p>{{$cart['price']}}.BDT</p>
 </td>
     <td class="cart_quantity">
         <span class="cart_quantity_button">

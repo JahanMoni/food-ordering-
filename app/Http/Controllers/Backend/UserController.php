@@ -52,7 +52,7 @@ class UserController extends Controller
     }
     public function userList()
     {
-        $user=User::paginate(3);
+        $user=User::paginate(5);
         return view('backend.layouts.user.list', compact('user'));
     }
     public function viewuser($id)

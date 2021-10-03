@@ -11,7 +11,7 @@ class Ordercontroller extends Controller
 {
     public function order()
     {
-        $orders=order::paginate(3);
+        $orders=order::paginate(5);
         return view('backend.layouts.orders.order',compact('orders'));
     }
     public function orderdetails($id)

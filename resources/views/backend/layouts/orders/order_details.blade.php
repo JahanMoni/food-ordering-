@@ -24,8 +24,8 @@
                            <td>{{$date ->order_id}}</td>
                            <td>{{$date ->item_name}}</td>
                            <td>{{$date ->quantity}}</td>
-                           <td>{{$date ->unit_price}}</td>
-                           <td>{{$date ->sub_total}}</td>
+                           <td>{{$date ->unit_price}}.BDT</td>
+                           <td>{{$date ->sub_total}}.BDT</td>
 
                        </tr>
 

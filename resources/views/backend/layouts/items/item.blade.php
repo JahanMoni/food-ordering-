@@ -37,9 +37,9 @@
             </td>
     <td>{{$item->price}}.BDT</td>
     <td>{{$item->details}}</td>
-    <td scope="row"><a href="#" class="btn btn-primary">View</a>
     
-                <a href="#" class="btn btn-warning">Edit</a>
+    <td>
+                <a href="{{route('items.edit',$item->id)}}" class="btn btn-warning">Edit</a>
                 <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('items.delete',$item->id)}}" class="btn btn-danger">Delete</a>
             </td>
 

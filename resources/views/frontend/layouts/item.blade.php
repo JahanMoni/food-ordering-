@@ -26,7 +26,7 @@
 						<div class="why-text">
 							<h4>Item-Name</h4>
 							<p class="card-text"> Item-{{$item->item_name}}</p>
-							<h5>  Price-{{$item->price}} </h5>
+							<h5>  Price-{{$item->price}}.BDT </h5>
 						</div>
 					
 					</div>

@@ -8,7 +8,7 @@
            <table class="table table-striped">
   <thead>
     <tr>
-      <th scope="col"> Id</th>
+      <th scope="col"> Order Id</th>
       <th scope="col">User ID</th>
       <th scope="col">Total payment</th>>
       <th scope="col">Receiver Name</th>
@@ -25,7 +25,7 @@
     <tr>
       <th scope="row">{{$key+1}}</th>
       <td>{{$order->user_id}}</td>
-      <td>{{$order->total_payment}}</td>
+      <td>{{$order->total_payment}}.BDT</td>
       <td>{{$order->receiver_name}}</td>
       <td>{{$order->receiver_email}}</td>
       <td>{{$order->receiver_phone_number}}</td>

@@ -34,8 +34,8 @@
       <td>
                 <img src="{{url('/uploads/'.$offers->image)}}" width="100px" alt="offer image">
             </td>
-      <td>{{$offers->price}}</td>
-      <td>{{$offers->discount_price}}</td>
+      <td>{{$offers->price}}.BDT</td>
+      <td>{{$offers->discount_price}}.BDT</td>
       <td>{{$offers->expire_date}}</td>
       <td>{{$offers->status}}</td>
       <td> 

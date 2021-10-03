@@ -24,12 +24,12 @@
   <tbody>
     <tr>
     @foreach($payments as $key=>$payment)
-      <th scope="row">{{$payment->user_id}}</th>
+      <th scope="row">{{$key+1}}</th>
       <td>{{$payment->order_id}}</td>
       <td>{{$payment->pay_at}}</td>
       <td>{{$payment->payment_type}}</td>
 
-      <td>{{$payment->total_payment}}</td>
+      <td>{{$payment->total_payment}}.BDT</td>
       
       
       <td>{{$payment->status}}</td>

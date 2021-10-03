@@ -20,16 +20,16 @@
 				</div>
 				<div class="col-lg-3 col-md-6">
 					<h3>Contact information</h3>
-					<p class="lead">uttara,dhaka 508000</p>
+					<p class="lead">uttara,dhaka 1230</p>
 					<p class="lead"><a href="#">01972260772</a></p>
 					<p><a href="#"> nusrat@admin.com</a></p>
 				</div>
 				<div class="col-lg-3 col-md-6">
-					<h3>Subscribe</h3>
+					<h3>Email Address</h3>
 					<div class="subscribe_form">
 						<form class="subscribe_form">
-							<input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
-							<button type="submit" class="submit">SUBSCRIBE</button>
+							<input name="EMAIL" id="subs-email" class="form_input" placeholder="jahanmoni1711@gmail.com" type="email">
+							
 							<div class="clearfix"></div>
 						</form>
 					</div>

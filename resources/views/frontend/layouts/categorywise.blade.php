@@ -72,13 +72,14 @@
 			<div class="row special-list">
 
 			@foreach($categoryWiseItem as $item)
+			<a href="{{route('itemview',$item->id)}}">
 				<div class="col-lg-4 col-md-6 special-grid drinks">
 					<div class="gallery-single fix">
 						<img src="{{url('uploads/'.$item->image)}}" class="img-fluid" alt="Image">
 						<div class="why-text">
 							<h4>Item-Name</h4>
 							<p class="card-text"> Item-{{$item->item_name}}</p>
-							<h5>  Price-{{$item->price}} </h5>
+							<h5>  Price-{{$item->price}}.BDT </h5>
 						</div>
 					</div>
 				</div>
