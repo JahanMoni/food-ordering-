@@ -43,5 +43,16 @@ class OfferController extends Controller
 
         }
     }
+    public function  delete($id)
+    {
+     
+        $Offer=Offer::find($id);
+        if($Offer)
+        {
+            $Offer->delete();
+            return redirect()->back()->with('message','item Deleted successfully.');
+        }
+        return redirect()->back()->with('message','No item found to delete.');
+    }
     
 }

@@ -35,7 +35,7 @@
     <td>
                 <img src="{{url('/uploads/'.$item->image)}}" width="100px" alt="item image">
             </td>
-    <td>{{$item->price}}</td>
+    <td>{{$item->price}}.BDT</td>
     <td>{{$item->details}}</td>
     <td scope="row"><a href="#" class="btn btn-primary">View</a>
     

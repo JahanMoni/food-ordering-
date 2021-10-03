@@ -110,7 +110,7 @@ body{
 <div class="container emp-profile">
             <form method="post">
                 <div class="row">
-                    <div class="col-md-4">
+                    <!-- <div class="col-md-4">
                         <div class="profile-img">
                             <br> </br>
                             <img src="{{url('/uploads/'.$users->images)}}" alt="users image">
@@ -119,7 +119,7 @@ body{
                                 <input type="file" name="file"/>
                             </div> -->
                         </div>
-                    </div>
+                    </div> -->
                     <div class="col-md-6">
                         <div class="profile-head">
                         <br> </br>

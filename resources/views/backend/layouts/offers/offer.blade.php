@@ -17,7 +17,8 @@
       <th scope="col">Price</th>
       <th scope="col">Discount Price</th>
       <th scope="col">Expire Date</th>
-      <th scope="col">Status</th>
+         <th scope="col">Status</th>
+         <th scope="col">Action</th>
       
     </tr>
   </thead>
@@ -37,6 +38,9 @@
       <td>{{$offers->discount_price}}</td>
       <td>{{$offers->expire_date}}</td>
       <td>{{$offers->status}}</td>
+      <td> 
+      <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('offers.delete',$offers->id)}}" class="btn btn-danger">Delete</a>
+</td>
 </tr>
       
       @endforeach

@@ -35,7 +35,7 @@
 					<p class="lead ">
 						" If you're not the one cooking, stay out of the way and compliment the chef. "
 					</p>
-					<span class="lead">Michael Strahan</span>
+					<span class="lead">Nusrat</span>
 				</div>
 			</div>
 		</div>
@@ -50,8 +50,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="heading-title text-center">
-						<h2>Item</h2>
-						<p>Our All Item list</p>
+						<h2>Category</h2>
+						<p>Our All  Category Wise Item list</p>
 					</div>
 				</div>
 			</div>

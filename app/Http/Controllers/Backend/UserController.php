@@ -60,4 +60,16 @@ class UserController extends Controller
         $users=user::find($id);
         return view('backend.layouts.user.viewuser',compact('users'));
     }
+    public function  delete($id)
+    {
+     
+        $users=user::find($id);
+        if( $users)
+        {
+            $users->delete();
+            return redirect()->back()->with('message','item Deleted successfully.');
+        }
+        return redirect()->back()->with('message','No item found to delete.');
+    }
+    
 }

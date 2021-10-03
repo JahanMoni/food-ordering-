@@ -8,7 +8,7 @@
         <tr>
             <th scope="col">Id</th>
             <th scope="col">Full Name</th>
-            <th scope="col">Image</th>
+           
             <th scope="col">Email</th>
             <th scope="col">Type</th>
             <th scope="col">Address</th>
@@ -22,9 +22,7 @@
         <tr>
             <th scope="row">{{$key+1}}</th>
             <td>{{$data->full_name}}</td>
-            <td>
-                <img src="{{url('/uploads/'.$data->images)}}" width="100px" alt="user image">
-            </td>
+            
             <td>{{$data->email}}</td>
             <td>{{$data->role}}</td>
             <td>{{$data->address}}</td>
@@ -34,8 +32,8 @@
             <td scope="row"><a href="{{route('user.viewuser',$data->id)}}" class="btn btn-primary">View</a>
             
     
-    <a href="#" class="btn btn-warning">Edit</a>
-    <a onclick="return confirm('Are you sure you want to delete this item?');" href="#" class="btn btn-danger">Delete</a>
+   
+            <a onclick="return confirm('Are you sure you want to delete this item?');" href="{{route('user.delete',$data->id)}}" class="btn btn-danger">Delete</a>
 </td>
 
         </tr>

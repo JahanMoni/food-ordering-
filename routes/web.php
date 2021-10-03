@@ -100,6 +100,7 @@ Route::put('/item/update/{id}',[ItemController::class,'update'])->name('items.up
 
 Route::get('/offer',[OfferController::class,'offer'])->name('offers.offer');
 Route::post('/offer/store',[OfferController::class,'store'])->name('offers..store');
+Route::get('/offer/delete/{id}',[OfferController::class,'delete'])->name('offers.delete');
 
 
 
@@ -132,6 +133,7 @@ Route::post('/info/store',[Restaurantcontroller::class,'store'])->name('Restaura
 Route::get('/customers',[BackendUser::class,'customer'])->name('customers.customer');
 Route::get('/users',[BackendUser::class,'userList'])->name('user.list');
 Route::get('/user/view/{id}',[BackendUser::class,'viewuser'])->name('user.viewuser');
+Route::get('/user/delete/{id}',[BackendUser::class,'delete'])->name('user.delete');
 
 
 
