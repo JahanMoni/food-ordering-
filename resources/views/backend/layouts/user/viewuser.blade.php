@@ -6,7 +6,7 @@
 <style type="text/css">
 body{
    
-    background-image:url('https://images.unsplash.com/photo-1515669097368-22e68427d265?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjA5fHxmb29kfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-image:url('');
 }
 .emp-profile{
     padding: 3%;

@@ -46,7 +46,7 @@
 	
 	<div class="form-row text-center  ">
     <div class="form-group col-md-6 text-center">
-      <label for="inputName">Name</label>
+      <label for="inputName">Admin</label>
       <input readonly type="name "name="restaurant_name" class="form-control" id="inputName" placeholder="Enter Name" value="{{$checkInfo->name??''}}" style="background-color: Azure"> 
     </div> 
  
